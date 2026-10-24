@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node server.mjs",
     "build": "node build.mjs",
-    "check": "node --check site-config.js && node --check app.js && node --check server.mjs && node --check build.mjs"
+    "check": "node --check site-config.js && node --check depth.js && node --check app.js && node --check server.mjs && node --check build.mjs"
   },
   "engines": {
     "node": ">=20"

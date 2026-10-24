@@ -70,54 +70,6 @@ document.querySelectorAll("dialog").forEach((dialog) => {
   });
 });
 
-const challenges = [
-  [
-    "Balance",
-    "Bring Ernährung, Bewegung und Erholung in einen Rhythmus, der zu dir passt.",
-  ],
-  [
-    "Run Club",
-    "Mach Laufen zu deiner Routine – mit persönlichen Wochenzielen und Motivation für den nächsten Schritt.",
-  ],
-  [
-    "Gym Warrior",
-    "Gib deinem Krafttraining Struktur und bleib an deinen persönlichen Trainingszielen dran.",
-  ],
-  [
-    "Eat Smart",
-    "Lerne deine Ernährung kennen und arbeite an bewussten Essensroutinen.",
-  ],
-  [
-    "Move More",
-    "Bring mehr Bewegung in deinen Alltag. Kleine Schritte können der Anfang sein.",
-  ],
-  [
-    "5K Mission",
-    "Mach die fünf Kilometer zu deinem persönlichen Ziel und arbeite mit einem individuellen Plan darauf hin.",
-  ],
-  [
-    "HYROX Warrior",
-    "Verbinde Kraft und Ausdauer und bring Struktur in deine persönliche HYROX-Vorbereitung.",
-  ],
-];
-document.querySelectorAll("[data-challenge]").forEach((button) =>
-  button.addEventListener("click", () => {
-    document
-      .querySelectorAll("[data-challenge]")
-      .forEach((b) =>
-        b.setAttribute(
-          "aria-pressed",
-          String(b.dataset.challenge === button.dataset.challenge),
-        ),
-      );
-    const [title, description] = challenges[Number(button.dataset.challenge)];
-    document.querySelector("#challenge-title").textContent = title;
-    document.querySelector("#challenge-description").textContent = description;
-    document.querySelector("#challenge-feature-title").textContent = title;
-    document.querySelector("#challenge-feature-description").textContent =
-      description;
-  }),
-);
 const workouts = {
   strength: [
     "Struktur für deine Stärke.",
@@ -223,21 +175,12 @@ function requestScroll() {
 window.addEventListener("scroll", requestScroll, { passive: true });
 window.addEventListener("resize", requestScroll, { passive: true });
 updateScroll();
-if ("IntersectionObserver" in window) {
-  const navObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        document.querySelectorAll(".desktop-nav a").forEach((a) => {
-          if (a.hash === `#${entry.target.id}`)
-            a.setAttribute("aria-current", "location");
-          else a.removeAttribute("aria-current");
-        });
-      });
-    },
-    { rootMargin: "-15% 0px -55% 0px", threshold: 0 },
-  );
-  document
-    .querySelectorAll("#features, #challenges, #tracking, #community, #faq")
-    .forEach((s) => navObserver.observe(s));
-}
+const currentPath = location.pathname.replace(/\/$/, "") || "/";
+document.querySelectorAll(".desktop-nav a, .mobile-nav a").forEach((a) => {
+  const destination = new URL(a.href).pathname;
+  if (
+    currentPath === destination ||
+    (destination !== "/" && currentPath.startsWith(destination + "/"))
+  )
+    a.setAttribute("aria-current", "page");
+});

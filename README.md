@@ -20,12 +20,18 @@ Alle Eyebrow-Zeilen und leeren Screenshot-Platzhalter wurden entfernt. Website-M
 
 Impressum und Datenschutzerklärung enthalten weiterhin die vom Betreiber angekündigten, noch zu ergänzenden Anbieterangaben bzw. Rechtstexte. Diese Inhalte dürfen nicht erfunden werden.
 
+## Seitenstruktur
+
+Die Startseite dient als Einstieg. Unter `pages/` liegen eigenständige HTML-Seiten für `/tracking`, `/training`, `/challenges`, `/ueber-vyra` und `/faq` sowie sieben Challenge-Detailseiten unter `/challenges/<name>`. `build.mjs` kopiert diese Verzeichnisse nach `dist/`; direkte Aufrufe funktionieren ohne clientseitiges Routing.
+
+`depth.js` enthält Perspektivbewegungen, Lichtverfolgung und die Bedienung des Entdecken-Menüs. CSS ergänzt animierte räumliche Ringe, Hover-Effekte und progressive View Transitions. `prefers-reduced-motion` deaktiviert Bewegungen; Texte und Navigation bleiben ohne Animation nutzbar. Touch-Geräte erhalten keine Maus-Tilt-Effekte.
+
 ## Interaktion
 
 - Sticky Navigation mit mobilem Menü, aktivem Abschnitt und Scroll-Fortschritt
 - Animierte Beispielringe; ruhiger Seitenaufbau ohne wiederholte Produktfolien
-- Durchgehend lesbare Inhalte ohne versteckte Scroll-Folien
-- Gemeinsame Gesundheitsübersicht, eigenständiger Trainingsbereich und direkt bedienbare Challenge-Auswahl
+- Durchgehend lesbare Inhalte, räumliche Ebenen und deaktivierbare Animationen
+- Echte Unterseiten und sieben eigenständige Challenge-Detailseiten
 - Native, per Tastatur bedienbare Dialoge, sieben Challenge-Optionen und Trainings-Tabs mit Pfeiltasten
 - Bei `prefers-reduced-motion` keine Scroll-Animationen und keine Parallax
 - Keine Analytics, externen Schriftarten, Formulare oder externen Bildquellen voreingestellt
