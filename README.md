@@ -1,6 +1,6 @@
 # VYRA Rhythm
 
-Deutschsprachige Produktwebsite auf bestehender HTML/CSS/JavaScript-Grundlage, ohne zusätzliche Pakete.
+Deutschsprachige Produktwebsite auf bestehender HTML/CSS/JavaScript-Grundlage, mit Nodemailer ausschließlich für den serverseitigen Formularversand.
 
 ## Lokal
 
@@ -44,7 +44,7 @@ Repository importieren. Framework: Other. Build: `npm run build`. Output: `dist`
 
 `/kontakt` verwendet `/api/contact` als Vercel-Node-Funktion, Nodemailer und ausschließlich das vom Betreiber gewählte IONOS-Postfach. Sender und Empfänger sind fest `info@vyra.solutions`; Antworten gehen an die validierte Besucheradresse. Kein Datei-Upload, keine Nachrichtendatenbank, keine Protokollierung der Formulardaten. Origin-Prüfung, Größenlimits und Honeypot reduzieren Missbrauch; sie ersetzen keine mengenbasierte Firewall-Regel bei erhöhtem Spamaufkommen.
 
-**Noch offen:** Das Postfach existiert laut Betreiber noch nicht. Im IONOS-Konto einrichten, Erreichbarkeit prüfen und das Postfach-Passwort ausschließlich als sensitive Vercel-Umgebungsvariable `IONOS_SMTP_PASSWORD` für Production hinterlegen. Danach neu deployen. Es wird kein zusätzlicher Versanddienst benötigt. Niemals das Passwort ins Repository oder in den Chat schreiben. Ohne Passwort liefert die API HTTP 503 und das Formular bleibt gesperrt. Keine Zustellung wurde bisher durchgeführt oder bestätigt.
+**Konfiguration (25.10.2026):** Der Betreiber hat die Existenz und Erreichbarkeit von info@vyra.solutions bestätigt. `IONOS_SMTP_PASSWORD` ist als sensitive Variable für Production vorhanden; ihr Wert wurde vom Agenten nicht ausgelesen. Der IONOS-Versand wird mit einem neuen Production-Deployment aktiviert. Es wird kein zusätzlicher Versanddienst benötigt. Niemals das Passwort ins Repository oder in den Chat schreiben. Ohne Passwort liefert die API HTTP 503 und das Formular bleibt gesperrt. Keine Zustellung wurde bisher durchgeführt oder bestätigt.
 
 Hosting über Vercel: geltenden AVV und Übermittlungsgrundlage prüfen. IONOS: nach Anbieterinformation ist die AVV bei Neuverträgen seit 19.07.2022 Teil der AGB; beim eigenen Vertrag kontrollieren. Die Datenschutzerklärung behauptet keinen bestätigten Vertragsabschluss.
 
