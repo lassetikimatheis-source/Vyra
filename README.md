@@ -18,7 +18,7 @@ Die Produktdarstellungen stammen aus dem vom Betreiber gelieferten Website-Mocku
 
 Alle Eyebrow-Zeilen und leeren Screenshot-Platzhalter wurden entfernt. Website-Metriken bleiben als Beispieldaten gekennzeichnet. Die App wird als TestFlight-Beta präsentiert, nicht als bestätigte öffentliche App-Store-Version.
 
-Impressum und Datenschutzerklärung enthalten weiterhin die vom Betreiber angekündigten, noch zu ergänzenden Anbieterangaben bzw. Rechtstexte. Diese Inhalte dürfen nicht erfunden werden.
+Impressum und Website-Datenschutzerklärung wurden anhand der Betreiberangaben ergänzt. Die Gewerbeanmeldung steht noch aus. Eine anwaltliche Prüfung und die Prüfung der tatsächlich geltenden Auftragsverarbeitungsverträge bleiben offen.
 
 ## Seitenstruktur
 
@@ -34,8 +34,20 @@ Die Startseite dient als Einstieg. Unter `pages/` liegen eigenständige HTML-Sei
 - Echte Unterseiten und sieben eigenständige Challenge-Detailseiten
 - Native, per Tastatur bedienbare Dialoge, sieben Challenge-Optionen und Trainings-Tabs mit Pfeiltasten
 - Bei `prefers-reduced-motion` keine Scroll-Animationen und keine Parallax
-- Keine Analytics, externen Schriftarten, Formulare oder externen Bildquellen voreingestellt
+- Keine Analytics, externen Schriftarten oder externen Bildquellen voreingestellt
 
 ## Vercel
 
 Repository importieren. Framework: Other. Build: `npm run build`. Output: `dist`. Die Einstellungen sind in `vercel.json` hinterlegt. GitHub-Remote und Vercel-Anmeldung müssen für die Veröffentlichung verbunden sein.
+
+## Kontaktformular und Freischaltung
+
+`/kontakt` verwendet `/api/contact` als Vercel-Node-Funktion, Nodemailer und ausschließlich das vom Betreiber gewählte IONOS-Postfach. Sender und Empfänger sind fest `info@vyra.solutions`; Antworten gehen an die validierte Besucheradresse. Kein Datei-Upload, keine Nachrichtendatenbank, keine Protokollierung der Formulardaten. Origin-Prüfung, Größenlimits und Honeypot reduzieren Missbrauch; sie ersetzen keine mengenbasierte Firewall-Regel bei erhöhtem Spamaufkommen.
+
+**Noch offen:** Das Postfach existiert laut Betreiber noch nicht. Im IONOS-Konto einrichten, Erreichbarkeit prüfen und das Postfach-Passwort ausschließlich als sensitive Vercel-Umgebungsvariable `IONOS_SMTP_PASSWORD` für Production hinterlegen. Danach neu deployen. Es wird kein zusätzlicher Versanddienst benötigt. Niemals das Passwort ins Repository oder in den Chat schreiben. Ohne Passwort liefert die API HTTP 503 und das Formular bleibt gesperrt. Keine Zustellung wurde bisher durchgeführt oder bestätigt.
+
+Hosting über Vercel: geltenden AVV und Übermittlungsgrundlage prüfen. IONOS: nach Anbieterinformation ist die AVV bei Neuverträgen seit 19.07.2022 Teil der AGB; beim eigenen Vertrag kontrollieren. Die Datenschutzerklärung behauptet keinen bestätigten Vertragsabschluss.
+
+`npm test` prüft Validierung, Origin, Größenlimit, festen Empfänger und Fehlerfälle mit einer isolierten SMTP-Test-Doppelung. Dies ist kein Live-Versandtest. Lokal zeigt der statische Server nur die Verfügbarkeit; POST wird ausschließlich auf Vercel ausgeführt. Vor Freigabe muss genau ein Ende-zu-Ende-Test mit dem echten Postfach erfolgreich sein. Ohne aktiven elektronischen Kontakt ist die Website noch nicht als vollständig veröffentlichungsreif zu bewerten.
+
+Keine optionalen Cookies oder Speicherzugriffe im Website-Code. `/cookies` informiert über den Stand; ein Zustimmungsbanner ist bei diesem Funktionsumfang nicht vorgesehen. App-Datenschutz ist gesondert zu erstellen.

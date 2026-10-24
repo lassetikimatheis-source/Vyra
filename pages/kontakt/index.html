@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0a0b0e" />
+    <title>Lass uns sprechen. — VYRA</title>
+    <link rel="icon" href="/assets/favicon.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/contact.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#inhalt">Zum Inhalt</a>
+    <header class="header">
+      <a class="brand" href="/" aria-label="VYRA Startseite"
+        >VYRA<span class="brand-dot"></span></a
+      ><a href="/">Zur Startseite ↗</a>
+    </header>
+    <main id="inhalt" class="legal-page">
+      <h1>Lass uns sprechen.</h1>
+      <p>Eine Frage zu Rhythm oder Feedback zur Beta? Schreib uns.</p>
+      <p>
+        Direkt per E-Mail:
+        <a href="mailto:info@vyra.solutions">info@vyra.solutions</a>
+      </p>
+      <form id="contact-form" class="contact-form">
+        <p id="form-status" role="status" aria-live="polite">
+          Versandverbindung wird geprüft …
+        </p>
+        <fieldset disabled>
+          <legend>Deine Nachricht</legend>
+          <label for="contact-name">Name <span>(freiwillig)</span></label
+          ><input
+            id="contact-name"
+            name="name"
+            autocomplete="name"
+            maxlength="120"
+          /><label for="contact-email"
+            >E-Mail-Adresse <span>(erforderlich)</span></label
+          ><input
+            id="contact-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            maxlength="254"
+            required
+          /><label for="contact-message"
+            >Nachricht <span>(erforderlich)</span></label
+          ><textarea
+            id="contact-message"
+            name="message"
+            rows="7"
+            minlength="10"
+            maxlength="5000"
+            required
+            aria-describedby="contact-privacy"
+          ></textarea>
+          <div class="form-trap" aria-hidden="true">
+            <label for="company">Dieses Feld bitte leer lassen</label
+            ><input
+              id="company"
+              name="company"
+              autocomplete="off"
+              tabindex="-1"
+            />
+          </div>
+          <p id="contact-privacy">
+            Bitte keine Gesundheitsdaten oder Passwörter senden. Wir verwenden
+            deine Angaben zur Bearbeitung deiner Anfrage. Mehr in der
+            <a href="/datenschutz">Datenschutzerklärung</a>.
+          </p>
+          <button class="button" type="submit">Nachricht senden ↗</button>
+        </fieldset>
+      </form>
+      <noscript
+        ><p>
+          Das Formular benötigt JavaScript. Alternativ kannst du an die oben
+          genannte E-Mail-Adresse schreiben.
+        </p></noscript
+      >
+    </main>
+    <footer class="site-footer wrap">
+      <div class="footer-bottom">
+        <span>© 2026 VYRA</span>
+        <nav aria-label="Rechtliche Informationen">
+          <a href="/kontakt">Kontakt</a><a href="/impressum">Impressum</a
+          ><a href="/datenschutz">Datenschutz</a
+          ><a href="/cookies">Cookie-Informationen</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -2,6 +2,7 @@ import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { resolve, extname, sep } from "node:path";
 const root = process.cwd();
+import { handleContact } from "./lib/contact.mjs";
 const types = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -16,6 +17,14 @@ createServer(async (req, res) => {
     const pathname = decodeURIComponent(
       new URL(req.url, "http://localhost").pathname,
     );
+    if (pathname === "/api/contact" && req.method === "GET") {
+      const response = await handleContact(
+        new Request(`http://localhost:${port}/api/contact`),
+      );
+      res.writeHead(response.status, Object.fromEntries(response.headers));
+      res.end(await response.text());
+      return;
+    }
     const direct = resolve(
       root,
       "." + (pathname === "/" ? "/index.html" : pathname),
@@ -28,6 +37,7 @@ createServer(async (req, res) => {
     const route = pathname.replace(/^\/+|\/+$/g, "");
     const candidates = [
       direct,
+      `${direct}.html`,
       resolve(direct, "index.html"),
       resolve(root, "pages", route, "index.html"),
     ];

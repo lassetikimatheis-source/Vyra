@@ -5,9 +5,13 @@
   "scripts": {
     "dev": "node server.mjs",
     "build": "node build.mjs",
-    "check": "node --check site-config.js && node --check depth.js && node --check app.js && node --check server.mjs && node --check build.mjs"
+    "check": "node --check site-config.js && node --check depth.js && node --check app.js && node --check server.mjs && node --check build.mjs && node --check contact.js && node --check api/contact.mjs && node --check lib/contact.mjs",
+    "test": "node --test"
   },
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "nodemailer": "^10.2.1"
   }
 }
