@@ -10,24 +10,15 @@ Node.js 20 oder neuer.
 - `npm run check` – JavaScript-Syntax prüfen
 - `npm run build` – statische Website in `dist/`
 
-## Redaktion und echte Screenshots
+## Redaktion und Produktbilder
 
-Zentrale Konfiguration: `site-config.js`.
+Bestätigter Beta-Link in `site-config.js`: https://testflight.apple.com/join/gQx4gKFY.
 
-Der vom Betreiber bestätigte Beta-Link ist https://testflight.apple.com/join/gQx4gKFY. Die Zielseite wurde im Browser als „VYRA Rhythm-Beta“ geprüft. Eine öffentliche App-Store-Verfügbarkeit wird nicht behauptet.
+Die Produktdarstellungen stammen aus dem vom Betreiber gelieferten Website-Mockup. Die Website verwendet CSS-Bildausschnitte des komprimierten Originalmotivs in `assets/rhythm-product-reference.jpg`; es werden keine App-Oberflächen nachgebaut. Die Bilder sind als Produktvisualisierung / Designstand gekennzeichnet. Die Community-Darstellung verwendet ausschließlich die Challenge-Ansicht, keinen unbestätigten Social Feed.
 
-Die vier Screenshot-Einträge stehen bewusst auf `null`. Originaldateien in `assets/screenshots/` ablegen und die entsprechenden lokalen Pfade in der Konfiguration eintragen:
+Alle Eyebrow-Zeilen und leeren Screenshot-Platzhalter wurden entfernt. Website-Metriken bleiben als Beispieldaten gekennzeichnet. Die App wird als TestFlight-Beta präsentiert, nicht als bestätigte öffentliche App-Store-Version.
 
-- `dashboard`: Dashboard mit Tagesbalance, Gesundheitsbereichen, Training und aktiver Challenge
-- `challenges`: Challenge-Übersicht
-- `activity`: Aktivitätsübersicht
-- `training`: Wochenplanung / Trainingsplan
-
-Die Bildplätze zeigen keine nachgebauten oder generierten App-Oberflächen. Ein fehlgeschlagenes Bild behält seinen sichtbaren Platzhalter. Original-Screenshots werden mit Alt-Text, festen Bildmaßen und Lazy Loading außerhalb des Einstiegs eingebunden. Vorhandene Namen und Gesundheitsdaten in gelieferten Screenshots vor Veröffentlichung prüfen.
-
-Die Gesundheitskacheln sind eigenständige Website-Illustrationen mit sichtbar gekennzeichneten Beispieldaten. Der Community-Bereich beschreibt die bestätigten Challenge-Funktionen. Kein Social Feed und keine Freundschaftsanfragen werden beworben.
-
-Impressum und Datenschutzerklärung wurden beim Redesign inhaltlich unverändert erhalten. Beide Seiten enthalten weiterhin die vom Betreiber noch zu ergänzenden rechtlichen Platzhalter.
+Impressum und Datenschutzerklärung enthalten weiterhin die vom Betreiber angekündigten, noch zu ergänzenden Anbieterangaben bzw. Rechtstexte. Diese Inhalte dürfen nicht erfunden werden.
 
 ## Interaktion
 

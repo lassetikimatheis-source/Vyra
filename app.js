@@ -48,37 +48,6 @@ if (config.betaUrl) {
   }
 }
 
-// Only supplied original images replace placeholders; no recreated app UI.
-document.querySelectorAll("[data-screen]").forEach((slot) => {
-  const source = config.screenshots?.[slot.dataset.screen];
-  if (!source) return;
-  let url;
-  try {
-    url = new URL(source, location.href);
-  } catch {
-    return;
-  }
-  if (url.protocol !== "https:" && url.origin !== location.origin) return;
-  const figure = slot.closest("figure");
-  const caption = figure.querySelector("figcaption");
-  const title = caption.textContent.split(" · ")[0];
-  const image = new Image();
-  image.alt = `Original-Screenshot aus VYRA Rhythm: ${title}`;
-  image.width = 1179;
-  image.height = 2556;
-  image.decoding = "async";
-  image.loading = figure.closest(".hero") ? "eager" : "lazy";
-  if (slot.dataset.screen === "dashboard") image.fetchPriority = "high";
-  image.addEventListener("load", () => {
-    slot.querySelector(".screen-placeholder")?.remove();
-    caption.textContent = `${title} · VYRA Rhythm`;
-    figure.classList.add("has-screenshot");
-  });
-  image.addEventListener("error", () => image.remove());
-  image.src = url.href;
-  slot.append(image);
-});
-
 document.querySelectorAll("[data-dialog]").forEach((button) => {
   button.addEventListener("click", () =>
     document.getElementById(button.dataset.dialog).showModal(),
