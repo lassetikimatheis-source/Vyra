@@ -23,9 +23,9 @@ Impressum und Datenschutzerklärung enthalten weiterhin die vom Betreiber angek�
 ## Interaktion
 
 - Sticky Navigation mit mobilem Menü, aktivem Abschnitt und Scroll-Fortschritt
-- IntersectionObserver-Reveals und animierte Beispielringe
-- Dezente, über requestAnimationFrame gebündelte Parallax auf Desktop
-- Kurz haftende Tracking-Produktansicht auf großen Bildschirmen
+- Animierte Beispielringe; ruhiger Seitenaufbau ohne wiederholte Produktfolien
+- Durchgehend lesbare Inhalte ohne versteckte Scroll-Folien
+- Gemeinsame Gesundheitsübersicht, eigenständiger Trainingsbereich und direkt bedienbare Challenge-Auswahl
 - Native, per Tastatur bedienbare Dialoge, sieben Challenge-Optionen und Trainings-Tabs mit Pfeiltasten
 - Bei `prefers-reduced-motion` keine Scroll-Animationen und keine Parallax
 - Keine Analytics, externen Schriftarten, Formulare oder externen Bildquellen voreingestellt

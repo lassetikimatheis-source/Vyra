@@ -26,7 +26,7 @@ document.addEventListener("keydown", (e) => {
     menuButton.focus();
   }
 });
-window.matchMedia("(min-width: 761px)").addEventListener("change", (e) => {
+window.matchMedia("(min-width: 681px)").addEventListener("change", (e) => {
   if (e.matches) closeMenu();
 });
 
@@ -104,10 +104,18 @@ document.querySelectorAll("[data-challenge]").forEach((button) =>
   button.addEventListener("click", () => {
     document
       .querySelectorAll("[data-challenge]")
-      .forEach((b) => b.setAttribute("aria-pressed", String(b === button)));
+      .forEach((b) =>
+        b.setAttribute(
+          "aria-pressed",
+          String(b.dataset.challenge === button.dataset.challenge),
+        ),
+      );
     const [title, description] = challenges[Number(button.dataset.challenge)];
     document.querySelector("#challenge-title").textContent = title;
     document.querySelector("#challenge-description").textContent = description;
+    document.querySelector("#challenge-feature-title").textContent = title;
+    document.querySelector("#challenge-feature-description").textContent =
+      description;
   }),
 );
 const workouts = {
@@ -185,7 +193,7 @@ reducedMotion.addEventListener("change", () => {
 
 const progress = document.querySelector(".scroll-progress");
 const devices = [...document.querySelectorAll("[data-parallax]")];
-const mobile = window.matchMedia("(max-width: 760px)");
+const mobile = window.matchMedia("(max-width: 680px)");
 let ticking = false;
 function updateScroll() {
   const y = window.scrollY;
