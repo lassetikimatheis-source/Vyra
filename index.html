@@ -1,0 +1,1004 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#08090b" />
+    <meta
+      name="description"
+      content="VYRA Rhythm: Health Tracking, Training, Ernährung und persönliche Challenges in einer iOS-App. Entdecke Rhythm und teste die Beta über TestFlight."
+    />
+    <meta
+      property="og:title"
+      content="RHYTHM von VYRA — Dein Leben. Dein Rhythmus."
+    />
+    <meta
+      property="og:description"
+      content="Gesünder leben. Mehr erreichen. Training, Ernährung und persönliche Challenges in einer App."
+    />
+    <meta property="og:type" content="website" />
+    <title>RHYTHM von VYRA — Dein Leben. Dein Rhythmus.</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/site-config.js" defer></script>
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <svg
+      class="svg-library"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <defs>
+        <symbol id="i-arrow" viewBox="0 0 24 24">
+          <path d="M4 12h15m-6-6 6 6-6 6" />
+        </symbol>
+        <symbol id="i-activity" viewBox="0 0 24 24">
+          <path d="M3 20h18M5 16V11m5 5V7m5 9V4m5 12V9" />
+        </symbol>
+        <symbol id="i-people" viewBox="0 0 24 24">
+          <circle cx="9" cy="8" r="3" />
+          <path
+            d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6m2 3a5 5 0 0 1 3 5"
+          />
+        </symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24">
+          <path d="M20 14A8.5 8.5 0 0 1 10 4a8.5 8.5 0 1 0 10 10Z" />
+        </symbol>
+        <symbol id="i-food" viewBox="0 0 24 24">
+          <circle cx="8" cy="5" r="1" />
+          <circle cx="13" cy="5" r="1" />
+          <circle cx="18" cy="5" r="1" />
+          <circle cx="5" cy="10" r="1" />
+          <circle cx="10" cy="10" r="1" />
+          <circle cx="15" cy="10" r="1" />
+          <circle cx="20" cy="10" r="1" />
+          <circle cx="8" cy="15" r="1" />
+          <circle cx="13" cy="15" r="1" />
+          <circle cx="18" cy="15" r="1" />
+          <circle cx="10" cy="20" r="1" />
+          <circle cx="15" cy="20" r="1" />
+        </symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24">
+          <path
+            d="M20.8 5.6a5.4 5.4 0 0 0-7.6 0L12 6.8l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 22l8.8-8.8a5.4 5.4 0 0 0 0-7.6Z"
+          />
+        </symbol>
+        <symbol id="i-cup" viewBox="0 0 24 24">
+          <path
+            d="M7 3h10v6a5 5 0 0 1-10 0V3ZM7 5H3v3a4 4 0 0 0 4 4m10-7h4v3a4 4 0 0 1-4 4m-5 2v6m-4 1h8"
+          />
+        </symbol>
+        <symbol id="i-star" viewBox="0 0 24 24">
+          <path
+            d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"
+          />
+        </symbol>
+        <symbol id="i-weight" viewBox="0 0 24 24">
+          <path d="M8 12h8M3 9v6m3-9v12m12-12v12m3-9v6M3 12h3m12 0h3" />
+        </symbol>
+        <symbol id="i-calendar" viewBox="0 0 24 24">
+          <rect x="3" y="5" width="18" height="16" rx="2" />
+          <path d="M7 3v5m10-5v5M3 11h18m-13 4h2m4 0h2m-8 3h2" />
+        </symbol>
+        <symbol id="i-link" viewBox="0 0 24 24">
+          <path
+            d="m9 15 6-6m-8 4-2 2a4 4 0 0 0 6 6l3-3m-4-12 3-3a4 4 0 0 1 6 6l-2 2"
+          />
+        </symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24">
+          <path d="M21 11a8 8 0 0 1-8 8H7l-5 3 1.5-6A8 8 0 1 1 21 11Z" />
+          <path d="M7 10h9m-9 4h6" />
+        </symbol>
+        <symbol id="i-bolt" viewBox="0 0 24 24">
+          <path d="m13 2-9 12h7l-1 8 10-13h-7Z" />
+        </symbol>
+        <symbol id="i-bell" viewBox="0 0 24 24">
+          <path d="M5 17h14l-2-4V8a5 5 0 0 0-10 0v5l-2 4Zm5 4h4" />
+        </symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24">
+          <path d="m12 2 8 3v7c0 5-8 10-8 10S4 17 4 12V5l8-3Z" />
+          <path d="m8 11 3 3 5-6" />
+        </symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24">
+          <rect x="6" y="2" width="12" height="20" rx="3" />
+          <path d="M10 5h4m-3 14h2" />
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24">
+          <path d="m5 12 4 4L19 6" />
+        </symbol>
+      </defs></svg
+    ><a class="skip" href="#main">Zum Inhalt</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="#" aria-label="Rhythm von VYRA Startseite"
+          >RHYTHM</a
+        >
+        <nav class="desktop-nav" aria-label="Hauptnavigation">
+          <a href="#features">Features</a><a href="#challenges">Challenges</a
+          ><a href="#tracking">Tracking</a><a href="#community">Community</a
+          ><a href="#faq">FAQ</a>
+        </nav>
+        <a
+          class="button button-small beta-link header-beta"
+          href="https://testflight.apple.com/join/gQx4gKFY"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Beta testen
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a
+        ><button
+          class="menu-button"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+      <nav
+        id="mobile-nav"
+        class="mobile-nav"
+        aria-label="Mobile Navigation"
+        hidden
+      >
+        <a href="#features">Features</a><a href="#challenges">Challenges</a
+        ><a href="#tracking">Tracking</a><a href="#community">Community</a
+        ><a href="#faq">FAQ</a
+        ><a
+          class="beta-link"
+          href="https://testflight.apple.com/join/gQx4gKFY"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Beta testen ↗</a
+        >
+      </nav>
+      <div class="scroll-progress" aria-hidden="true"></div>
+    </header>
+    <main id="main">
+      <section class="hero" id="features">
+        <div class="hero-inner wrap">
+          <div class="hero-copy">
+            <p class="eyebrow reveal">DEIN LEBEN. DEIN RHYTHMUS.</p>
+            <h1 class="reveal">Gesünder leben.<br />Mehr erreichen.</h1>
+            <p class="lead reveal">
+              Health Tracking, Training, Ernährung und persönliche Challenges –
+              alles in einer App.
+            </p>
+            <div class="button-row reveal">
+              <a
+                class="button beta-link"
+                href="https://testflight.apple.com/join/gQx4gKFY"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Jetzt Beta testen
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-arrow" /></svg></a
+              ><a class="button button-outline" href="#challenges"
+                >Mehr erfahren</a
+              >
+            </div>
+            <ul class="hero-benefits reveal">
+              <li>
+                <span class="icon-square"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="#i-heart" /></svg></span
+                ><span>Apple Health<br />Integration</span>
+              </li>
+              <li>
+                <span class="icon-square"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="#i-activity" /></svg></span
+                ><span>Für jedes<br />Fitnesslevel</span>
+              </li>
+              <li>
+                <span class="icon-square"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="#i-people" /></svg></span
+                ><span>Gemeinsam<br />besser werden</span>
+              </li>
+            </ul>
+            <p class="hero-status reveal">
+              <span></span> VYRA RHYTHM · iOS BETA ÜBER TESTFLIGHT
+            </p>
+          </div>
+          <div
+            class="hero-devices"
+            aria-label="Bildplätze für Dashboard und Challenge-Übersicht"
+          >
+            <div class="product-glow"></div>
+            <figure class="device phone-back" data-parallax=".04">
+              <div class="device-hardware">
+                <div class="device-screen" data-screen="challenges">
+                  <div class="screen-placeholder">
+                    <span class="screen-wordmark">R H Y T H M</span>
+                    <div class="placeholder-core">
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-phone" /></svg
+                      ><strong>Challenges</strong
+                      ><span>Original-Screenshot folgt</span>
+                    </div>
+                    <span class="placeholder-label"
+                      >BILDPLATZ · KEINE APP-ANSICHT</span
+                    >
+                  </div>
+                </div>
+                <div class="device-island"></div>
+                <span class="device-button"></span
+                ><span class="device-home"></span>
+              </div>
+              <figcaption>Challenges · Originalbild ausstehend</figcaption>
+            </figure>
+            <figure class="device phone-front" data-parallax=".075">
+              <div class="device-hardware">
+                <div class="device-screen" data-screen="dashboard">
+                  <div class="screen-placeholder">
+                    <span class="screen-wordmark">R H Y T H M</span>
+                    <div class="placeholder-core">
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-phone" /></svg
+                      ><strong>Deine Tagesübersicht</strong
+                      ><span>Original-Screenshot folgt</span>
+                    </div>
+                    <span class="placeholder-label"
+                      >BILDPLATZ · KEINE APP-ANSICHT</span
+                    >
+                  </div>
+                </div>
+                <div class="device-island"></div>
+                <span class="device-button"></span
+                ><span class="device-home"></span>
+              </div>
+              <figcaption>
+                Deine Tagesübersicht · Originalbild ausstehend
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section class="product-section challenge-section" id="challenges">
+        <div class="product-row wrap">
+          <div class="section-copy reveal">
+            <p class="eyebrow">CHALLENGES</p>
+            <h2>Gemeinsame Ziele.<br />Dein eigener Rhythmus.</h2>
+            <p>
+              Ob mehr Bewegung, bessere Ernährung oder erholsamer Schlaf – mit
+              den Rhythm Challenges bleibst du motiviert und siehst deinen
+              Fortschritt.
+            </p>
+            <button class="button" data-dialog="challenge-dialog">
+              Challenges entdecken
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+            </button>
+          </div>
+          <div class="product-stage">
+            <div class="stage-glow orange-glow"></div>
+            <figure class="device section-phone" data-parallax=".04">
+              <div class="device-hardware">
+                <div class="device-screen" data-screen="challenges">
+                  <div class="screen-placeholder">
+                    <span class="screen-wordmark">R H Y T H M</span>
+                    <div class="placeholder-core">
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-phone" /></svg
+                      ><strong>Rhythm Challenges</strong
+                      ><span>Original-Screenshot folgt</span>
+                    </div>
+                    <span class="placeholder-label"
+                      >BILDPLATZ · KEINE APP-ANSICHT</span
+                    >
+                  </div>
+                </div>
+                <div class="device-island"></div>
+                <span class="device-button"></span
+                ><span class="device-home"></span>
+              </div>
+              <figcaption>
+                Rhythm Challenges · Originalbild ausstehend
+              </figcaption>
+            </figure>
+          </div>
+          <ul class="highlight-list">
+            <li class="highlight reveal">
+              <span class="icon-disc orange"
+                ><svg class="icon" aria-hidden="true"><use href="#i-cup" /></svg
+              ></span>
+              <div>
+                <h3>Wöchentliche Ziele</h3>
+                <p>Sammle Punkte und bleib dran.</p>
+              </div>
+            </li>
+            <li class="highlight reveal">
+              <span class="icon-disc green"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-activity" /></svg
+              ></span>
+              <div>
+                <h3>Dein Fortschritt</h3>
+                <p>Sieh, was du erreicht hast.</p>
+              </div>
+            </li>
+            <li class="highlight reveal">
+              <span class="icon-disc purple"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-people" /></svg
+              ></span>
+              <div>
+                <h3>Gemeinsam motiviert</h3>
+                <p>Geteilte Challenges. Persönliche Ziele.</p>
+              </div>
+            </li>
+            <li class="highlight reveal">
+              <span class="icon-disc orange"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-star" /></svg
+              ></span>
+              <div>
+                <h3>Punkte & Boni</h3>
+                <p>Für deine persönlichen Erfolge.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="product-section tracking-section" id="tracking">
+        <div class="product-row wrap">
+          <div class="section-copy reveal">
+            <p class="eyebrow">HEALTH TRACKING</p>
+            <h2>Behalte deine<br />Gesundheit im Blick.</h2>
+            <p>
+              Schlaf, Aktivität, Ernährung und Erholung – alle wichtigen Daten
+              an einem Ort. Für einen Überblick, der deinen Alltag
+              verständlicher macht.
+            </p>
+            <button class="button" data-dialog="tracking-dialog">
+              Mehr zu Health Tracking
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+            </button>
+          </div>
+          <div class="product-stage">
+            <div class="stage-glow"></div>
+            <figure class="device section-phone" data-parallax=".04">
+              <div class="device-hardware">
+                <div class="device-screen" data-screen="activity">
+                  <div class="screen-placeholder">
+                    <span class="screen-wordmark">R H Y T H M</span>
+                    <div class="placeholder-core">
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-phone" /></svg
+                      ><strong>Deine Aktivität</strong
+                      ><span>Original-Screenshot folgt</span>
+                    </div>
+                    <span class="placeholder-label"
+                      >BILDPLATZ · KEINE APP-ANSICHT</span
+                    >
+                  </div>
+                </div>
+                <div class="device-island"></div>
+                <span class="device-button"></span
+                ><span class="device-home"></span>
+              </div>
+              <figcaption>Deine Aktivität · Originalbild ausstehend</figcaption>
+            </figure>
+          </div>
+          <div class="health-panel reveal">
+            <div class="health-grid">
+              <article class="health-card green">
+                <h3>
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-food" />
+                  </svg>
+                  Ernährung
+                </h3>
+                <p>1.650 <span>/ 2.400 kcal</span></p>
+                <div class="metric-ring" style="--progress: 69">
+                  <svg viewBox="0 0 80 80" aria-hidden="true">
+                    <circle class="ring-track" cx="40" cy="40" r="32" />
+                    <circle
+                      class="ring-fill"
+                      cx="40"
+                      cy="40"
+                      r="32"
+                      pathLength="100"
+                    /></svg
+                  ><strong>69<small>%</small></strong>
+                </div>
+              </article>
+              <article class="health-card blue">
+                <h3>
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-moon" />
+                  </svg>
+                  Schlaf
+                </h3>
+                <p>7 h 28 min <span></span></p>
+                <div class="metric-ring" style="--progress: 83">
+                  <svg viewBox="0 0 80 80" aria-hidden="true">
+                    <circle class="ring-track" cx="40" cy="40" r="32" />
+                    <circle
+                      class="ring-fill"
+                      cx="40"
+                      cy="40"
+                      r="32"
+                      pathLength="100"
+                    /></svg
+                  ><strong>83<small>%</small></strong>
+                </div>
+              </article>
+              <article class="health-card orange">
+                <h3>
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-activity" />
+                  </svg>
+                  Aktivität
+                </h3>
+                <p>7.420 <span>Schritte</span></p>
+                <div class="metric-ring" style="--progress: 74">
+                  <svg viewBox="0 0 80 80" aria-hidden="true">
+                    <circle class="ring-track" cx="40" cy="40" r="32" />
+                    <circle
+                      class="ring-fill"
+                      cx="40"
+                      cy="40"
+                      r="32"
+                      pathLength="100"
+                    /></svg
+                  ><strong>74<small>%</small></strong>
+                </div>
+              </article>
+              <article class="health-card purple">
+                <h3>
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-heart" />
+                  </svg>
+                  Erholung
+                </h3>
+                <p>82 <span>/ 100</span></p>
+                <div class="metric-ring" style="--progress: 82">
+                  <svg viewBox="0 0 80 80" aria-hidden="true">
+                    <circle class="ring-track" cx="40" cy="40" r="32" />
+                    <circle
+                      class="ring-fill"
+                      cx="40"
+                      cy="40"
+                      r="32"
+                      pathLength="100"
+                    /></svg
+                  ><strong>82<small>%</small></strong>
+                </div>
+              </article>
+            </div>
+            <p class="example-label">
+              ILLUSTRATIVE WEBSITE-KACHELN · BEISPIELDATEN
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="product-section training-section" id="training">
+        <div class="product-row wrap">
+          <div class="section-copy reveal">
+            <p class="eyebrow">TRAINING</p>
+            <h2>Struktur für<br />bessere Einheiten.</h2>
+            <p>
+              Plane dein Training, dokumentiere deine Workouts und behalte deine
+              Fortschritte im Blick – vom Krafttraining bis zum Laufen und
+              HYROX.
+            </p>
+            <button class="button" data-dialog="training-dialog">
+              Mehr zum Training
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+            </button>
+          </div>
+          <div class="product-stage">
+            <div class="stage-glow"></div>
+            <figure class="device section-phone" data-parallax=".04">
+              <div class="device-hardware">
+                <div class="device-screen" data-screen="training">
+                  <div class="screen-placeholder">
+                    <span class="screen-wordmark">R H Y T H M</span>
+                    <div class="placeholder-core">
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-phone" /></svg
+                      ><strong>Dein Trainingsplan</strong
+                      ><span>Original-Screenshot folgt</span>
+                    </div>
+                    <span class="placeholder-label"
+                      >BILDPLATZ · KEINE APP-ANSICHT</span
+                    >
+                  </div>
+                </div>
+                <div class="device-island"></div>
+                <span class="device-button"></span
+                ><span class="device-home"></span>
+              </div>
+              <figcaption>
+                Dein Trainingsplan · Originalbild ausstehend
+              </figcaption>
+            </figure>
+          </div>
+          <ul class="highlight-list">
+            <li class="highlight reveal">
+              <span class="icon-disc purple"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-weight" /></svg
+              ></span>
+              <div>
+                <h3>Individuelle Trainingspläne</h3>
+                <p>An deinen Zielen und deiner Häufigkeit orientiert.</p>
+              </div>
+            </li>
+            <li class="highlight reveal">
+              <span class="icon-disc orange"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-activity" /></svg
+              ></span>
+              <div>
+                <h3>Übungen & Fortschritt</h3>
+                <p>Sätze, Wiederholungen, Gewichte und Pausen.</p>
+              </div>
+            </li>
+            <li class="highlight reveal">
+              <span class="icon-disc purple"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-calendar" /></svg
+              ></span>
+              <div>
+                <h3>Flexibel & einfach</h3>
+                <p>Deine Woche. Deine Einheiten. Dein Tempo.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="product-section community-section" id="community">
+        <div class="product-row wrap">
+          <div class="section-copy reveal">
+            <p class="eyebrow">COMMUNITY · DURCH CHALLENGES</p>
+            <h2>Gemeinsam<br />mehr erreichen.</h2>
+            <p>
+              Teile öffentliche oder private Challenges und motiviert euch
+              gegenseitig. Jeder verfolgt seine persönlichen Ziele – mit einem
+              gemeinsamen Antrieb.
+            </p>
+            <button class="button" data-dialog="community-dialog">
+              Mehr zum Miteinander
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+            </button>
+          </div>
+          <div class="product-stage">
+            <div class="stage-glow"></div>
+            <figure class="device section-phone" data-parallax=".04">
+              <div class="device-hardware">
+                <div class="device-screen" data-screen="challenges">
+                  <div class="screen-placeholder">
+                    <span class="screen-wordmark">R H Y T H M</span>
+                    <div class="placeholder-core">
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-phone" /></svg
+                      ><strong>Gemeinsame Challenges</strong
+                      ><span>Original-Screenshot folgt</span>
+                    </div>
+                    <span class="placeholder-label"
+                      >BILDPLATZ · KEINE APP-ANSICHT</span
+                    >
+                  </div>
+                </div>
+                <div class="device-island"></div>
+                <span class="device-button"></span
+                ><span class="device-home"></span>
+              </div>
+              <figcaption>
+                Gemeinsame Challenges · Originalbild ausstehend
+              </figcaption>
+            </figure>
+          </div>
+          <ul class="highlight-list">
+            <li class="highlight reveal">
+              <span class="icon-disc purple"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-people" /></svg
+              ></span>
+              <div>
+                <h3>Gemeinsam starten</h3>
+                <p>Öffentliche und private Challenges teilen.</p>
+              </div>
+            </li>
+            <li class="highlight reveal">
+              <span class="icon-disc orange"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-link" /></svg
+              ></span>
+              <div>
+                <h3>Dein Name. Dein Fortschritt.</h3>
+                <p>Ein eindeutiger Name pro Challenge.</p>
+              </div>
+            </li>
+            <li class="highlight reveal">
+              <span class="icon-disc orange"
+                ><svg class="icon" aria-hidden="true"><use href="#i-cup" /></svg
+              ></span>
+              <div>
+                <h3>Motivation, die bleibt</h3>
+                <p>Wochenziele, Punkte und Ranglisten.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="beta-section" id="beta">
+        <div class="wrap beta-inner">
+          <div class="beta-copy reveal">
+            <p class="eyebrow">BEREIT FÜR DEN NÄCHSTEN SCHRITT?</p>
+            <h2>Sei von Anfang an dabei.</h2>
+            <p>
+              Rhythm befindet sich aktuell in der Testphase. Teste die Beta über
+              TestFlight und hilf mit, die App noch besser zu machen.
+            </p>
+            <div class="button-row">
+              <a
+                class="button beta-link"
+                href="https://testflight.apple.com/join/gQx4gKFY"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Jetzt Beta testen
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-arrow" /></svg></a
+              ><a class="button button-outline" href="#faq"
+                >Fragen? FAQ ansehen</a
+              >
+            </div>
+            <ul class="beta-benefits">
+              <li>
+                <span class="icon-disc orange"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="#i-bolt" /></svg
+                ></span>
+                <div>
+                  <strong>Früher Zugang</strong><span>Entdecke die Beta.</span>
+                </div>
+              </li>
+              <li>
+                <span class="icon-disc neutral"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="#i-chat" /></svg
+                ></span>
+                <div>
+                  <strong>Direktes Feedback</strong
+                  ><span>Über TestFlight.</span>
+                </div>
+              </li>
+              <li>
+                <span class="icon-disc purple"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="#i-bell" /></svg
+                ></span>
+                <div>
+                  <strong>Aktiv mitgestalten</strong
+                  ><span>Deine Ideen zählen.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="device-detail" aria-hidden="true">
+            <div class="camera-plate"><i></i><i></i><i></i><span></span></div>
+            <span class="detail-wordmark">RHYTHM</span>
+          </div>
+        </div>
+      </section>
+      <section class="privacy-section wrap" id="privatsphaere">
+        <div class="privacy-heading reveal">
+          <span class="icon-disc neutral"
+            ><svg class="icon" aria-hidden="true"><use href="#i-shield" /></svg
+          ></span>
+          <div>
+            <p class="eyebrow">DEINE DATEN. DEINE ENTSCHEIDUNG.</p>
+            <h2>Vertrauen gehört dazu.</h2>
+          </div>
+        </div>
+        <div class="privacy-grid">
+          <article class="reveal">
+            <h3>Im Kern lokal.</h3>
+            <p>
+              Gesundheits- und Tagebuchdaten werden im Kern auf deinem Gerät
+              verarbeitet bzw. gespeichert.
+            </p>
+          </article>
+          <article class="reveal">
+            <h3>Mit deiner Freigabe.</h3>
+            <p>
+              Anmeldung und Challenges nutzen Supabase. Für Challenge-Abgleiche
+              werden nur nach ausdrücklicher Freigabe ausgewählte Daten
+              übertragen.
+            </p>
+          </article>
+          <article class="reveal">
+            <h3>Transparent verbunden.</h3>
+            <p>
+              Apple Health und die vorhandene WHOOP-Anbindung ergänzen deinen
+              Überblick. Fehlende Daten und Berechtigungen werden erklärt.
+            </p>
+          </article>
+        </div>
+        <p class="fine-print">
+          Rhythm stellt keine Diagnosen. Die Tagesbalance ist eine Orientierung
+          zur Zielerfüllung, kein medizinisch validierter Gesundheitsnachweis.
+        </p>
+      </section>
+      <section class="faq-section wrap" id="faq">
+        <div class="reveal">
+          <p class="eyebrow">GUT ZU WISSEN</p>
+          <h2>Deine Fragen.<br />Unsere Antworten.</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details>
+            <summary>Was ist RHYTHM – und wer ist VYRA?<span>+</span></summary>
+            <p>
+              VYRA ist das Unternehmen und die Marke hinter der iOS-App VYRA
+              Rhythm. Rhythm verbindet Ernährung, Training, Bewegung, Schlaf und
+              Erholung in einer gemeinsamen Übersicht.
+            </p>
+          </details>
+          <details>
+            <summary>Wie kann ich die Beta testen?<span>+</span></summary>
+            <p>
+              Über den Beta-Button gelangst du zu unserem TestFlight-Zugang. Du
+              benötigst ein kompatibles iPhone und Apples TestFlight-App. Ob
+              aktuell Plätze frei sind und welche Systemversion erforderlich
+              ist, erfährst du direkt auf der TestFlight-Seite.
+            </p>
+          </details>
+          <details>
+            <summary>
+              Ist Rhythm schon im App Store verfügbar?<span>+</span>
+            </summary>
+            <p>
+              Rhythm befindet sich in Entwicklung und Test. Eine öffentliche
+              App-Store-Verfügbarkeit ist noch nicht bestätigt. Aktuell führt
+              der Beta-Button zu TestFlight.
+            </p>
+          </details>
+          <details>
+            <summary>Wie funktionieren die Challenges?<span>+</span></summary>
+            <p>
+              Sieben 30-Tage-Start-Challenges bieten unterschiedliche
+              Schwerpunkte. Nach dem Beitritt entsteht ein persönlicher Plan aus
+              freigegebenen Daten oder kurzen Fragen. Wochenziele, Punkte, Boni
+              und Ranglisten berücksichtigen persönliche Anforderungen sowie
+              Krankheit, Erholung und einzelne Ausrutscher.
+            </p>
+          </details>
+          <details>
+            <summary>
+              Gibt es Freunde und einen Social Feed?<span>+</span>
+            </summary>
+            <p>
+              Das Miteinander entsteht aktuell über teilbare öffentliche und
+              private Challenges. Klassische Freundschaftsanfragen und ein
+              allgemeiner Social Feed gehören nicht zum aktuellen Konzept.
+            </p>
+          </details>
+          <details>
+            <summary>Welche Daten werden angezeigt?<span>+</span></summary>
+            <p>
+              Welche Gesundheitswerte verfügbar sind, hängt von deinen Freigaben
+              und den vorhandenen Daten ab. Fehlende Werte werden nicht
+              erfunden. Die farbigen Website-Kacheln zeigen ausschließlich
+              gekennzeichnete Beispieldaten.
+            </p>
+          </details>
+          <details>
+            <summary>Warum fehlen noch App-Bilder?<span>+</span></summary>
+            <p>
+              Die Original-Screenshots für Dashboard, Challenges, Aktivität und
+              Trainingsplan werden noch ergänzt. Die Smartphone-Rahmen sind
+              dafür vorbereitete Bildplätze. Sie zeigen keine erfundenen
+              App-Ansichten.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer wrap">
+      <div class="footer-top">
+        <a class="wordmark" href="#">RHYTHM</a
+        ><span>Eine App von <strong>VYRA.</strong></span
+        ><a href="#">Zurück nach oben ↑</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> VYRA</span>
+        <nav aria-label="Rechtliche Informationen">
+          <a href="/impressum.html">Impressum</a
+          ><a href="/datenschutz.html">Datenschutz</a
+          ><a href="#privatsphaere">Deine Daten</a>
+        </nav>
+        <span>DEIN LEBEN. DEIN RHYTHMUS.</span>
+      </div>
+    </footer>
+    <dialog id="challenge-dialog" aria-labelledby="challenge-dialog-title">
+      <div class="dialog-top">
+        <span class="eyebrow">30 TAGE. DEIN START.</span
+        ><button class="dialog-close" aria-label="Dialog schließen">×</button>
+      </div>
+      <h2 id="challenge-dialog-title">Finde deine Challenge.</h2>
+      <div
+        class="challenge-selector"
+        role="group"
+        aria-label="Challenge auswählen"
+      >
+        <button aria-pressed="true" data-challenge="0">Balance</button
+        ><button aria-pressed="false" data-challenge="1">Run Club</button
+        ><button aria-pressed="false" data-challenge="2">Gym Warrior</button
+        ><button aria-pressed="false" data-challenge="3">Eat Smart</button
+        ><button aria-pressed="false" data-challenge="4">Move More</button
+        ><button aria-pressed="false" data-challenge="5">5K Mission</button
+        ><button aria-pressed="false" data-challenge="6">HYROX Warrior</button>
+      </div>
+      <div class="dialog-feature" aria-live="polite">
+        <span class="icon-disc orange"
+          ><svg class="icon" aria-hidden="true"><use href="#i-cup" /></svg
+        ></span>
+        <h3 id="challenge-title">Balance</h3>
+        <p id="challenge-description">
+          Bring Ernährung, Bewegung und Erholung in einen Rhythmus, der zu dir
+          passt.
+        </p>
+      </div>
+      <p class="dialog-note">
+        Individuelle Wochenziele, Punkte, Boni und Ranglisten. Dein Plan
+        entsteht aus freigegebenen Daten oder kurzen Fragen – ohne
+        verpflichtende Testphase.
+      </p>
+      <a
+        class="button beta-link"
+        href="https://testflight.apple.com/join/gQx4gKFY"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Jetzt Beta testen
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg
+      ></a>
+    </dialog>
+    <dialog id="tracking-dialog" aria-labelledby="tracking-dialog-title">
+      <div class="dialog-top">
+        <span class="eyebrow">ALLES HÄNGT ZUSAMMEN.</span
+        ><button class="dialog-close" aria-label="Dialog schließen">×</button>
+      </div>
+      <h2 id="tracking-dialog-title">Ein Blick aufs Ganze.</h2>
+      <div class="dialog-features">
+        <article>
+          <h3>Ernährung</h3>
+          <p>
+            Kalorien und Makros, Mahlzeiten erfassen, Lebensmittel suchen und
+            deinen Mahlzeitenverlauf ansehen.
+          </p>
+        </article>
+        <article>
+          <h3>Schlaf & Bewegung</h3>
+          <p>
+            Nutze freigegebene Apple-Health-Daten und die vorhandene
+            WHOOP-Anbindung, um deinen Alltag besser einzuordnen.
+          </p>
+        </article>
+        <article>
+          <h3>Erholung</h3>
+          <p>
+            Betrachte Erholung im Zusammenhang mit deinem Training und deiner
+            täglichen Bewegung.
+          </p>
+        </article>
+      </div>
+      <p class="dialog-note">
+        Verfügbare Werte hängen von deinen Daten und Berechtigungen ab. Rhythm
+        stellt keine Diagnosen.
+      </p>
+      <a
+        class="button beta-link"
+        href="https://testflight.apple.com/join/gQx4gKFY"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Jetzt Beta testen
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg
+      ></a>
+    </dialog>
+    <dialog id="training-dialog" aria-labelledby="training-dialog-title">
+      <div class="dialog-top">
+        <span class="eyebrow">DEIN TRAINING. DEIN TEMPO.</span
+        ><button class="dialog-close" aria-label="Dialog schließen">×</button>
+      </div>
+      <h2 id="training-dialog-title">Ein Plan für dein Ziel.</h2>
+      <div class="training-options" role="tablist" aria-label="Trainingsarten">
+        <button
+          role="tab"
+          id="tab-strength"
+          aria-controls="training-panel"
+          aria-selected="true"
+          data-training="strength"
+        >
+          Krafttraining</button
+        ><button
+          role="tab"
+          id="tab-running"
+          aria-controls="training-panel"
+          aria-selected="false"
+          tabindex="-1"
+          data-training="running"
+        >
+          Laufen</button
+        ><button
+          role="tab"
+          id="tab-hyrox"
+          aria-controls="training-panel"
+          aria-selected="false"
+          tabindex="-1"
+          data-training="hyrox"
+        >
+          HYROX
+        </button>
+      </div>
+      <div
+        class="dialog-feature"
+        id="training-panel"
+        role="tabpanel"
+        aria-labelledby="tab-strength"
+      >
+        <h3>Struktur für deine Stärke.</h3>
+        <p>
+          Ober- und Unterkörper, Übungen und Alternativen. Im Trainingsmodus
+          begleiten dich Sätze, Wiederholungen, Gewichte und Pausen.
+        </p>
+      </div>
+      <p class="dialog-note">
+        Persönliche Ziele, Trainingshäufigkeit und Kalender bringen Struktur in
+        deine Woche.
+      </p>
+      <a
+        class="button beta-link"
+        href="https://testflight.apple.com/join/gQx4gKFY"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Jetzt Beta testen
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg
+      ></a>
+    </dialog>
+    <dialog id="community-dialog" aria-labelledby="community-dialog-title">
+      <div class="dialog-top">
+        <span class="eyebrow">GEMEINSAM MOTIVIERT.</span
+        ><button class="dialog-close" aria-label="Dialog schließen">×</button>
+      </div>
+      <h2 id="community-dialog-title">Deine Ziele.<br />Euer Antrieb.</h2>
+      <div class="dialog-features">
+        <article>
+          <h3>Challenges teilen</h3>
+          <p>
+            Lade andere zu öffentlichen oder privaten Challenges ein. Jeder
+            startet mit einem individuellen Plan.
+          </p>
+        </article>
+        <article>
+          <h3>Dein eigener Name</h3>
+          <p>
+            Wähle einen mit deinem Konto verknüpften Namen, der innerhalb der
+            jeweiligen Challenge eindeutig ist.
+          </p>
+        </article>
+        <article>
+          <h3>Persönlich bleiben</h3>
+          <p>
+            Punkte und Ranglisten belohnen die Erfüllung persönlicher
+            Anforderungen. Erholung und Krankheit werden berücksichtigt.
+          </p>
+        </article>
+      </div>
+      <p class="dialog-note">
+        Ein allgemeiner Social Feed und klassische Freundschaftsanfragen sind
+        nicht Bestandteil des aktuellen Konzepts.
+      </p>
+      <a
+        class="button beta-link"
+        href="https://testflight.apple.com/join/gQx4gKFY"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Jetzt Beta testen
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg
+      ></a>
+    </dialog>
+  </body>
+</html>
