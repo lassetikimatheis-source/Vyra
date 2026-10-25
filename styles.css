@@ -3872,3 +3872,24 @@ dialog h2 {
     animation: none;
   }
 }
+
+/* One fluid page edge across wide screens, navigation and reading pages. */
+:root {
+  --page-gutter: clamp(20px, 4vw, 80px);
+}
+.wrap,
+.header-inner,
+.header,
+.campaign-home .wrap,
+.campaign-home .header-inner {
+  width: calc(100% - var(--page-gutter) * 2);
+  max-width: none;
+  margin-inline: auto;
+}
+.legal-page {
+  width: min(800px, calc(100% - var(--page-gutter) * 2));
+  max-width: none;
+  margin-left: var(--page-gutter);
+  margin-right: auto;
+  padding-inline: 0;
+}
