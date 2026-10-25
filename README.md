@@ -51,3 +51,9 @@ Hosting über Vercel: geltenden AVV und Übermittlungsgrundlage prüfen. IONOS: 
 `npm test` prüft Validierung, Origin, Größenlimit, festen Empfänger und Fehlerfälle mit einer isolierten SMTP-Test-Doppelung. Dies ist kein Live-Versandtest. Lokal zeigt der statische Server nur die Verfügbarkeit; POST wird ausschließlich auf Vercel ausgeführt. Der Live-Formulartest bis zur SMTP-Annahme ist abgeschlossen; der Eingang im Postfach kann vom Agenten nicht geprüft werden.
 
 Keine optionalen Cookies oder Speicherzugriffe im Website-Code. `/cookies` informiert über den Stand; ein Zustimmungsbanner ist bei diesem Funktionsumfang nicht vorgesehen. App-Datenschutz ist gesondert zu erstellen.
+
+## Markenauftritt und Startseite (25.10.2026)
+
+Verbindlicher App-Name laut Betreiber: **VYRA Rhythm**. Das vom Betreiber gelieferte Original-Logo liegt unverändert unter `assets/vyra-logo-original.jpg` und wird in Navigation und Footer über einen CSS-Bildausschnitt dargestellt. Das Favicon ist eine kleine SVG-Umsetzung des dreiteiligen Blattzeichens. Korall und Nachtblau greifen die Logo-Farben auf.
+
+Die Startseite verwendet ein neues, generiertes redaktionelles Sportmotiv (`assets/vyra-campaign.jpg`, rein illustratives Markenbild, keine Kundin oder Empfehlung). Das Motiv wird lokal ausgeliefert. Die App-Ansicht darunter verwendet weiterhin ausschließlich die vorhandene, als Designstand gekennzeichnete Produktvisualisierung. Die Startseite führt über eigenständige redaktionelle Abschnitte zu den bestehenden Unterseiten. Keine neuen App-Funktionen, Preise oder Wirkungsversprechen wurden hinzugefügt.
