@@ -161,8 +161,9 @@
       videoToggle.setAttribute('aria-pressed', String(!video.paused));
     };
     const startVideo = () => {
-      if (!video.getAttribute('src')) { video.src = video.dataset.src; video.load(); }
+      if (!video.getAttribute('src')) { video.preload = 'auto'; video.src = video.dataset.src; video.load(); }
       video.muted = true;
+      if (!video.paused) return;
       video.play().then(syncVideoButton).catch(syncVideoButton);
     };
     const refreshPlayback = () => {

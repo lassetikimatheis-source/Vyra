@@ -16,3 +16,5 @@ Local derivative: up to 10 seconds, 1920x1080, H.264, 24fps, no audio, faststart
 Project images: generated with built-in image_gen on 2026-11-26. Full prompts in assets/projects/generation-notes.txt. Conceptual illustrations, no customer property or real product interface depicted.
 
 Current Vesta/Bauklar visuals: code-native HTML/CSS monitor mockups, no generated photographs. Conceptual interfaces and labelled example data; not original product screenshots. Earlier generated JPEGs remain as unused source history.
+
+Calm hero derivative (vyra-skyline-calm.mp4): source 19236196 slowed to half speed, motion-interpolated at 30fps, 1600x900 H.264 High L4, forward/return loop around 41 seconds, muted, faststart, bitrate capped at 1.6 Mbps. This is an edited loop, not 41 seconds of distinct original footage.

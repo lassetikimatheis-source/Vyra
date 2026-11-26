@@ -57,3 +57,7 @@ VYRA Rhythm ist als eigenes VYRA-Produkt wieder integriert, getrennt von Kundenr
 ### Bildschirm-Mockups und ursprüngliche Markenfarben
 
 Die aktuell sichtbaren Architektur- und Baustellenbilder wurden durch direkt in HTML/CSS gestaltete Monitor-Mockups ersetzt. Klare Typografie, Beispieltabellen und schematische Diagramme machen den Softwarebezug sichtbar. Sie sind ausdrücklich konzeptionelle Bildschirmdarstellungen mit Beispieldaten, keine tatsächlichen Kundenoberflächen oder Feature-Nachweise. Frühere KI-Fotomotive werden nicht mehr eingebunden. Korall, Mint und Blau ersetzen die limettengrünen Akzente; der dunkle Hintergrund entspricht wieder der vorherigen Marine-Palette.
+
+### Ruhigere Video-Schleife
+
+Die Startseite verwendet vyra-skyline-calm.mp4: halbe Bewegungsgeschwindigkeit, 30fps mit Bewegungsinterpolation und eine Vorwärts-/Rückwärts-Schleife von rund 41 Sekunden statt des zehnsekündigen Clips mit hartem Neustart. Die Auflösung von 1600x900 und ein Bitratenlimit von 1,6 Mbit/s reduzieren Übertragung und Dekodieraufwand. Die Langsamkeit ist in die Datei eingerechnet; keine ruckelnde JavaScript-Zeitsteuerung. Motion- und Datenspareinstellungen sowie die Pause-Funktion bleiben erhalten.
