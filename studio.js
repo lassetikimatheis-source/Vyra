@@ -46,42 +46,53 @@
     { passive: true },
   );
   paint();
-  document.querySelectorAll('[data-process-explorer]').forEach(explorer => {
-    const tabList = explorer.querySelector('[role="tablist"]');
-    const tabs = [...tabList.querySelectorAll('[role="tab"]')];
-    const panels = [...explorer.querySelectorAll('[role="tabpanel"]')];
-    const controls = explorer.querySelector('.process-controls');
-    const previous = controls.querySelector('[data-process-prev]');
-    const next = controls.querySelector('[data-process-next]');
-    const position = controls.querySelector('[data-process-position]');
-    let current = 0;
-    const select = (index, focus = false) => {
-      current = Math.max(0, Math.min(tabs.length - 1, index));
-      tabs.forEach((tab, i) => {
-        tab.setAttribute('aria-selected', String(i === current));
-        tab.tabIndex = i === current ? 0 : -1;
-        panels[i].hidden = i !== current;
+  document.querySelectorAll('[data-scroll-process]').forEach(process => {
+    const steps = [...process.querySelectorAll('.scroll-phase')];
+    const nodes = steps.map(step => step.querySelector('.scroll-node'));
+    const track = process.querySelector('.scroll-track');
+    const fill = track.querySelector('i');
+    const aside = process.querySelector('.scroll-result-aside');
+    const card = aside.querySelector('.scroll-result-card');
+    const links = [...process.querySelectorAll('.scroll-phase-links a')];
+    const flow = [...aside.querySelectorAll('.scroll-result-flow span')];
+    const segments = [...aside.querySelectorAll('.scroll-result-progress i')];
+    let pending = false;
+    let active = -1;
+    const render = () => {
+      const bounds = nodes.map(node => node.getBoundingClientRect());
+      const base = process.querySelector('.scroll-steps').getBoundingClientRect();
+      const first = bounds[0].top + bounds[0].height / 2;
+      const last = bounds.at(-1).top + bounds.at(-1).height / 2;
+      const cursor = innerHeight * .52;
+      track.style.top = `${first - base.top}px`;
+      track.style.height = `${last - first}px`;
+      fill.style.transform = `scaleY(${motion.matches ? 1 : Math.max(0, Math.min(1, (cursor - first) / Math.max(1, last - first)))})`;
+      let current = 0;
+      bounds.forEach((box, index) => {
+        const reached = box.top + box.height / 2 <= cursor;
+        if (reached) current = index;
+        steps[index].classList.toggle('is-reached', reached || motion.matches);
       });
-      previous.disabled = current === 0;
-      next.disabled = current === tabs.length - 1;
-      position.textContent = `${current + 1} von ${tabs.length}`;
-      if (focus) tabs[current].focus();
+      if (current !== active) {
+        active = current;
+        steps.forEach((step, index) => step.classList.toggle('is-active', index === active));
+        links.forEach((link, index) => { if (index === active) link.setAttribute('aria-current', 'step'); else link.removeAttribute('aria-current'); });
+        card.dataset.phase = String(active);
+        aside.querySelector('[data-scroll-label]').textContent = steps[active].dataset.phaseName;
+        aside.querySelector('[data-scroll-result]').textContent = steps[active].querySelector('.scroll-inline-result p').textContent;
+        const source = steps[active].querySelectorAll('.scroll-flow-source span');
+        flow.forEach((item, index) => item.textContent = source[index].textContent);
+        segments.forEach((segment, index) => segment.classList.toggle('is-done', index <= active));
+      }
+      pending = false;
     };
-    tabs.forEach((tab, index) => {
-      tab.addEventListener('click', () => select(index));
-      tab.addEventListener('keydown', event => {
-        let target;
-        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') target = (current + 1) % tabs.length;
-        if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') target = (current - 1 + tabs.length) % tabs.length;
-        if (event.key === 'Home') target = 0;
-        if (event.key === 'End') target = tabs.length - 1;
-        if (target !== undefined) { event.preventDefault(); select(target, true); }
-      });
-    });
-    previous.addEventListener('click', () => select(current - 1));
-    next.addEventListener('click', () => select(current + 1));
-    select(0); tabList.hidden = false; controls.hidden = false;
-    explorer.classList.add('is-enhanced');
+    const schedule = () => { if (!pending) { pending = true; requestAnimationFrame(render); } };
+    addEventListener('scroll', schedule, {passive:true});
+    addEventListener('resize', schedule);
+    motion.addEventListener('change', schedule);
+    aside.hidden = false; process.classList.add('is-scroll-ready');
+    render();
+    document.fonts?.ready.then(schedule);
   });
   const previewDialog = document.querySelector('.rhythm-preview-dialog');
   if (previewDialog && typeof previewDialog.showModal === 'function') {
