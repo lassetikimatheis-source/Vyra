@@ -46,6 +46,32 @@
     { passive: true },
   );
   paint();
+  // The line follows scroll position; each milestone lights as it is reached.
+  const journey = document.querySelector('[data-journey]');
+  if (journey) {
+    const progress = journey.querySelector('.journey-progress');
+    const steps = [...journey.querySelectorAll('.journey-step')];
+    const dots = [...journey.querySelectorAll('.journey-dot')];
+    const halos = [...journey.querySelectorAll('.journey-halo')];
+    let pending = false;
+    const drawJourney = () => {
+      const box = journey.getBoundingClientRect();
+      const ratio = motion.matches ? 1 : Math.max(0, Math.min(1, (innerHeight * .57 - box.top) / box.height));
+      progress.style.strokeDashoffset = String(1 - ratio);
+      steps.forEach((step, index) => {
+        const reached = ratio >= (index + .5) / steps.length;
+        step.classList.toggle('is-reached', reached);
+        dots[index]?.classList.toggle('is-reached', reached);
+        halos[index]?.classList.toggle('is-reached', reached);
+      });
+      pending = false;
+    };
+    const scheduleJourney = () => { if (!pending) { pending = true; requestAnimationFrame(drawJourney); } };
+    addEventListener('scroll', scheduleJourney, {passive:true});
+    addEventListener('resize', scheduleJourney);
+    motion.addEventListener('change', drawJourney);
+    drawJourney();
+  }
   const strip = document.querySelector("[data-client-strip]");
   const toggle = document.querySelector(".ticker-toggle");
   if (

@@ -8,8 +8,9 @@ Customer Menges logo: https://www.cr-menges.de/wp-content/uploads/2026/05/cr-men
 Customer Paribus logo: original inline SVG from https://www.paribus.de/ (viewBox 0 0 459 67.25).
 Customer relationship and identities confirmed directly by website operator. Logos displayed as references; trademarks owned by their respective companies.
 
-Background video: Arlind D, Pexels 29801537, Aerial View of Frankfurt City Skyline.
-Video page: https://www.pexels.com/video/aerial-view-of-frankfurt-city-skyline-29801537/
+Background skyline video and derived poster: Masood Aslami, Pexels 19236196, Aerial view of the skyline.
+Video page: https://www.pexels.com/video/aerial-view-of-the-skyline-19236196/
 License: https://www.pexels.com/license/ (free commercial use), checked 2026-11-26.
-Official download: https://www.pexels.com/download/video/29801537/?fps=60.0&h=1080&w=1920
-Local web derivative: 9-second loop, 1920x1080, H.264, 24fps, no audio, faststart. Stock city footage, not VYRA premises. No external video embed or third-party playback requests.
+Official download: https://www.pexels.com/download/video/19236196/?fps=29.97&h=1080&w=1920
+Local derivative: up to 10 seconds, 1920x1080, H.264, 24fps, no audio, faststart. Stock city footage, not VYRA premises. No external video embed or third-party playback requests.
+Project images: generated with built-in image_gen on 2026-11-26. Full prompts in assets/projects/generation-notes.txt. Conceptual illustrations, no customer property or real product interface depicted.
