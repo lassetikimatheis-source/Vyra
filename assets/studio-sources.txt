@@ -14,3 +14,5 @@ License: https://www.pexels.com/license/ (free commercial use), checked 2026-11-
 Official download: https://www.pexels.com/download/video/19236196/?fps=29.97&h=1080&w=1920
 Local derivative: up to 10 seconds, 1920x1080, H.264, 24fps, no audio, faststart. Stock city footage, not VYRA premises. No external video embed or third-party playback requests.
 Project images: generated with built-in image_gen on 2026-11-26. Full prompts in assets/projects/generation-notes.txt. Conceptual illustrations, no customer property or real product interface depicted.
+
+Current Vesta/Bauklar visuals: code-native HTML/CSS monitor mockups, no generated photographs. Conceptual interfaces and labelled example data; not original product screenshots. Earlier generated JPEGs remain as unused source history.

@@ -53,3 +53,7 @@ Der frühere Überflug wurde durch eine Aufnahme der Skyline vom Main aus ersetz
 ### Produkte und Seitentiefe
 
 VYRA Rhythm ist als eigenes VYRA-Produkt wieder integriert, getrennt von Kundenreferenzen. /produkte bietet den Einstieg; /rhythm führt zu /rhythm/balance, /rhythm/training und /rhythm/challenges. Die Hauptnavigation führt zu eigenständigen Leistungs-, Prozess-, Projekt- und Produktseiten. /prozess erklärt die Zusammenarbeit mit Scrolllinie; Projektseiten verlinken verwandte Projekte und Leistungen. Die App-Visualisierung ist eine ausdrücklich illustrative Funktionsübersicht ohne erfundene Gesundheitswerte. Der vom Betreiber bestätigte TestFlight-Link bleibt erhalten, ohne öffentliche App-Store-Verfügbarkeit zu behaupten. Keine Änderungen an Apple-Verifikation oder bestehenden unveröffentlichten App-Rechtstexten.
+
+### Bildschirm-Mockups und ursprüngliche Markenfarben
+
+Die aktuell sichtbaren Architektur- und Baustellenbilder wurden durch direkt in HTML/CSS gestaltete Monitor-Mockups ersetzt. Klare Typografie, Beispieltabellen und schematische Diagramme machen den Softwarebezug sichtbar. Sie sind ausdrücklich konzeptionelle Bildschirmdarstellungen mit Beispieldaten, keine tatsächlichen Kundenoberflächen oder Feature-Nachweise. Frühere KI-Fotomotive werden nicht mehr eingebunden. Korall, Mint und Blau ersetzen die limettengrünen Akzente; der dunkle Hintergrund entspricht wieder der vorherigen Marine-Palette.
