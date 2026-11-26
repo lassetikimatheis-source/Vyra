@@ -1466,3 +1466,82 @@ h3 {
 @media (max-width:760px) {
   .client-logo img[src*="menges"] { height: 90px; width:90px; }
 }
+
+/* VYRA in colour: coral identity, mint highlights and a real city video. */
+:root { --bg:#0e111b; --coral:#f28ea9; --mint:#89e6c5; --sky:#91b8ff; --muted:#aeb5c8; }
+body { background:var(--bg); }
+.studio-header { background:#0e111bf2; }
+#studio-mobile { background:#0e111b; }
+.studio-hero-image { filter:none; }
+.studio-hero-video { position:absolute; inset:0; z-index:-3; width:100%; height:100%; object-fit:cover; object-position:center; opacity:0; transition:opacity 1s ease; pointer-events:none; }
+.studio-hero-video.is-playing { opacity:1; }
+.studio-hero-shade { background:linear-gradient(90deg,#091026bc 0%,#0d143346 62%,#111a2b0a),linear-gradient(0deg,#0e111bd9,transparent 65%,#09132470); }
+.hero-studio-content h1 >span { color:#ffb4cb; }
+.hero-studio-link { color:#1f1824; background:var(--coral); padding:16px 24px; border:1px solid #fca8c0; border-radius:30px; box-shadow:0 8px 35px #f28ea91b; transition:background .2s,transform .2s,box-shadow .2s; }
+.hero-studio-link:hover { background:#ffc1d5; transform:translateY(-3px); box-shadow:0 12px 40px #f28ea935; }
+.nav-contact,.solid-button,.contact-form button[type=submit] { background:var(--coral); color:#211824; border-color:var(--coral); }
+.studio-desktop .nav-contact { color:#211824; }
+.solid-button:hover,.nav-contact:hover,.contact-form button[type=submit]:hover { background:#ffc1d5; color:#211824!important; }
+.studio-desktop a:not(.nav-contact):hover { color:var(--coral); }
+.hero-video-actions { display:flex; align-items:center; gap:28px; }
+.video-toggle { color:#f4f5fb; font-size:.8rem; border:1px solid #ffffff66; padding:8px 13px; border-radius:24px; background:#0a122b66; backdrop-filter:blur(8px); }
+.video-toggle:hover { background:#233257b3; }
+.client-section { background:linear-gradient(110deg,#172039,#141727 60%,#251a32); border-color:#f28ea929; }
+.client-logo img,.logo-fallback img,.case-client { filter:none; opacity:1; }
+.client-logo img[src*="menges"],.logo-fallback img[src*="menges"],.case-client[src*="menges"] { filter:none; mix-blend-mode:normal; border-radius:50%; }
+.ink-mint { color:var(--mint); }
+.page-intro h1 span { color:var(--coral); }
+.section-lead h2,.section-heading h2 { text-wrap:balance; }
+.underlined-link { border-color:#f28ea985; }
+.underlined-link:hover { color:#ffb4cb; border-color:var(--coral); }
+.service-grid { border-color:#92a8f135; }
+.service-grid article { transition:transform .4s ease; }
+.service-grid article:hover { transform:translateY(-6px); }
+.service-icon { color:var(--mint); transition:transform .4s; }
+.service-icon i { border-color:currentColor; }
+.icon-process i:nth-child(2) { background:var(--mint); }
+.icon-build { color:var(--sky); }
+.icon-build i:last-child { background:var(--bg); }
+.icon-grow i { background:var(--coral); }
+.service-grid article:hover .service-icon { transform:translateY(-4px) rotate(-3deg); }
+.vesta-art { background:linear-gradient(140deg,#b0efd4,#64c7b5); color:#154c42; }
+.bauklar-art { background:linear-gradient(140deg,#466df0,#1c3c96); color:#f3f5ff; }
+.bauklar-bars i { background:#c9f58d; }
+.project-caption h3 { color:#f2b5cb; }
+.project-card { transition:transform .7s cubic-bezier(.2,.65,.3,1),opacity .7s ease; }
+.project-card:hover .project-art { box-shadow:0 18px 55px #3b5fd724; }
+.project-card.motion-shown .bauklar-bars i { transform-origin:bottom; animation:bar-breathe 4s ease-in-out infinite alternate; animation-delay:calc(var(--bar-index,0)*180ms); }
+.bauklar-bars i:nth-child(2) { --bar-index:1; }.bauklar-bars i:nth-child(3) { --bar-index:2; }.bauklar-bars i:nth-child(4) { --bar-index:3; }.bauklar-bars i:nth-child(5) { --bar-index:4; }
+.project-card.motion-shown .vesta-symbol i { animation:mark-float 5s ease-in-out infinite; }
+.vesta-symbol i:nth-child(2) { animation-delay:-1.5s!important; }.vesta-symbol i:nth-child(3) { animation-delay:-3s!important; }
+.process-section { background:linear-gradient(130deg,#123b3b,#102a3b 52%,#1b2140); }
+.process-grid article { border-top-color:#89e6c570; }
+.process-node { border-color:var(--mint); background:var(--mint); box-shadow:0 0 0 5px #89e6c50e; }
+.process-grid h3 { color:#a8f5df; }
+.process-grid p { color:#bac9d6; }
+.studio-statement >p >span { color:var(--coral); }
+.studio-statement { background:radial-gradient(ellipse at 70% 45%,#f28ea90a,transparent 65%); }
+.studio-faq details[open] summary { color:#ffc0d3; }
+.studio-faq summary:after { color:var(--coral); }
+.contact-form input,.contact-form textarea { background:#171d30; border-color:#91b8ff35; }
+.contact-form label span { color:#a5aec6; }
+.motion-waiting { opacity:0; transform:translateY(25px); }
+.section-lead,.service-grid article,.process-grid article,.studio-statement,.faq-section,.studio-cta,.service-list article { transition:opacity .75s ease,transform .75s cubic-bezier(.2,.65,.3,1); transition-delay:var(--reveal-delay,0ms); }
+@keyframes bar-breathe { from{transform:skewY(-15deg) scaleY(.8)} to{transform:skewY(-15deg) scaleY(1)} }
+@keyframes mark-float { 0%,100%{transform:skewY(-25deg) translateY(0)} 50%{transform:skewY(-25deg) translateY(-7px)} }
+@media(max-width:760px) {
+ .hero-studio-bottom { align-items:flex-end; gap:15px; }
+ .hero-studio-bottom >span { max-width:160px; }
+ .hero-video-actions { flex-direction:column; align-items:flex-end; gap:15px; }
+ .studio-hero-shade { background:linear-gradient(0deg,#0b1026ec,#0c15397a 70%,#10152f45); }
+ .studio-hero-video { object-position:55% center; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .motion-waiting { opacity:1; transform:none; }
+ .project-card,.section-lead,.service-grid article,.process-grid article,.studio-statement,.faq-section,.studio-cta,.service-list article,.hero-studio-link,.service-icon,.studio-hero-video { transition:none; }
+ .vesta-symbol i,.bauklar-bars i { animation:none!important; }
+ .service-grid article:hover,.service-grid article:hover .service-icon { transform:none; }
+}
+
+.studio-home .studio-header { background:linear-gradient(180deg,#0e111bd9,#0e111b00); }
+.studio-home .studio-header.is-scrolled { background:#0e111bf2; }

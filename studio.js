@@ -95,4 +95,76 @@
     motion.addEventListener("change", apply);
     apply();
   }
+  // Reveal actual content progressively, without hiding above-the-fold text.
+  const revealTargets = [...document.querySelectorAll('.section-lead, .service-grid article, .project-card, .process-grid article, .studio-statement, .faq-section, .studio-cta, .service-list article')];
+  let revealObserver;
+  const setupReveals = () => {
+    revealObserver?.disconnect();
+    if (motion.matches || !('IntersectionObserver' in window)) {
+      revealTargets.forEach(el => el.classList.remove('motion-waiting'));
+      return;
+    }
+    revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('motion-waiting');
+          entry.target.classList.add('motion-shown');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.1});
+    revealTargets.forEach((el, index) => {
+      el.style.setProperty('--reveal-delay', `${(index % 3) * 65}ms`);
+      if (el.getBoundingClientRect().top > innerHeight * .9) el.classList.add('motion-waiting');
+      else el.classList.add('motion-shown');
+      revealObserver.observe(el);
+    });
+  };
+  setupReveals();
+  motion.addEventListener('change', setupReveals);
+
+  const video = document.querySelector('.studio-hero-video');
+  const videoToggle = document.querySelector('.video-toggle');
+  if (video && videoToggle) {
+    let userPaused = false;
+    let manualPlay = false;
+    let inView = true;
+    const saveData = navigator.connection?.saveData === true;
+    const syncVideoButton = () => {
+      videoToggle.textContent = video.paused ? 'Video abspielen' : 'Video pausieren';
+      videoToggle.setAttribute('aria-pressed', String(!video.paused));
+    };
+    const startVideo = () => {
+      if (!video.getAttribute('src')) { video.src = video.dataset.src; video.load(); }
+      video.muted = true;
+      video.play().then(syncVideoButton).catch(syncVideoButton);
+    };
+    const refreshPlayback = () => {
+      if ((manualPlay || (!motion.matches && !saveData)) && !userPaused && inView && !document.hidden) startVideo();
+      else video.pause();
+    };
+    video.addEventListener('playing', () => { video.classList.add('is-playing'); syncVideoButton(); });
+    video.addEventListener('pause', syncVideoButton);
+    video.addEventListener('error', () => { video.classList.remove('is-playing'); videoToggle.hidden = true; });
+    videoToggle.hidden = false;
+    videoToggle.addEventListener('click', () => {
+      if (video.paused) { userPaused=false; manualPlay=true; startVideo(); }
+      else { userPaused=true; video.pause(); }
+    });
+    motion.addEventListener('change', () => {
+      manualPlay=false;
+      if (motion.matches) { video.pause(); video.classList.remove('is-playing'); }
+      refreshPlayback();
+    });
+    document.addEventListener('visibilitychange', refreshPlayback);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(entries => {
+        inView=entries[0].isIntersecting;
+        refreshPlayback();
+      }, {threshold:0.05}).observe(video.closest('.studio-hero'));
+    }
+    syncVideoButton();
+    refreshPlayback();
+  }
+
 })();

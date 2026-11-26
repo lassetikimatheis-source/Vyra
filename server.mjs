@@ -11,6 +11,7 @@ const types = {
   ".jpg": "image/jpeg",
   ".webp": "image/webp",
   ".png": "image/png",
+  ".mp4": "video/mp4",
 };
 const port = Number(process.env.PORT || 3000);
 createServer(async (req, res) => {
