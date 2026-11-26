@@ -1,1 +1,72 @@
-{"buildCommand":"npm run build","outputDirectory":"dist","framework":null,"cleanUrls":true,"headers":[{"source":"/(.*)","headers":[{"key":"X-Content-Type-Options","value":"nosniff"},{"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"},{"key":"X-Frame-Options","value":"DENY"}]}]}
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": null,
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/tracking",
+      "destination": "/leistungen",
+      "permanent": true
+    },
+    {
+      "source": "/training",
+      "destination": "/leistungen",
+      "permanent": true
+    },
+    {
+      "source": "/challenges",
+      "destination": "/projekte",
+      "permanent": true
+    },
+    {
+      "source": "/ueber-vyra",
+      "destination": "/ueber-uns",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/#fragen",
+      "permanent": true
+    },
+    {
+      "source": "/challenges/:path*",
+      "destination": "/projekte",
+      "permanent": true
+    },
+    {
+      "source": "/vesta",
+      "destination": "/projekte/vesta",
+      "permanent": true
+    },
+    {
+      "source": "/baukontur",
+      "destination": "/projekte/bauklar",
+      "permanent": true
+    },
+    {
+      "source": "/rhythm",
+      "destination": "/leistungen",
+      "permanent": true
+    }
+  ]
+}

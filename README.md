@@ -1,44 +1,18 @@
-# VYRA
+# VYRA Software Studio
 
-Deutschsprachige Unternehmenswebsite für Softwareberatung, individuelle Entwicklung und die Produkte Vesta, BauKontur und VYRA Rhythm. Nodemailer wird serverseitig für das Kontaktformular verwendet.
+Deutschsprachige Website für individuelle Softwareentwicklung: Prozessanalyse, Konzeption, Entwicklung und Einführung. HTML, CSS und JavaScript; Nodemailer ausschließlich für das serverseitige Kontaktformular.
 
-## Lokal
+## Lokal und Build
 
-Node.js 20 oder neuer.
+- Node.js 20 oder neuer; Production ist auf Node 24 eingestellt.
+- `npm run dev`: lokale Vorschau auf Port 3000.
+- `npm run check`: Syntax der vorhandenen Skripte; neue Skripte zusätzlich mit `node --check studio.js` und `node --check clients.js` prüfen.
+- `npm test`: bestehende Kontakt-Tests.
+- `npm run build`: statische Dateien nach `dist/`, Vercel baut die Funktionen aus `api/` separat.
 
-- `npm run dev` – Vorschau unter http://localhost:3000
-- `npm run check` – JavaScript-Syntax prüfen
-- `npm run build` – statische Website in `dist/`
+## Seiten
 
-## Redaktion und Produktbilder
-
-Bestätigter Beta-Link in `site-config.js`: https://testflight.apple.com/join/gQx4gKFY.
-
-Die Produktdarstellungen stammen aus dem vom Betreiber gelieferten Website-Mockup. Die Website verwendet CSS-Bildausschnitte des komprimierten Originalmotivs in `assets/rhythm-product-reference.jpg`; es werden keine App-Oberflächen nachgebaut. Die Bilder sind als Produktvisualisierung / Designstand gekennzeichnet. Die Community-Darstellung verwendet ausschließlich die Challenge-Ansicht, keinen unbestätigten Social Feed.
-
-Alle Eyebrow-Zeilen und leeren Screenshot-Platzhalter wurden entfernt. Website-Metriken bleiben als Beispieldaten gekennzeichnet. Die App wird als TestFlight-Beta präsentiert, nicht als bestätigte öffentliche App-Store-Version.
-
-Impressum und Website-Datenschutzerklärung wurden anhand der Betreiberangaben ergänzt. Die Gewerbeanmeldung steht noch aus. Eine anwaltliche Prüfung und die Prüfung der tatsächlich geltenden Auftragsverarbeitungsverträge bleiben offen.
-
-## Seitenstruktur
-
-Die Startseite stellt VYRA als Softwareunternehmen vor. Die Produktseiten sind unter `/vesta`, `/baukontur` und `/rhythm` erreichbar. Für Rhythm liegen unter `pages/` zusätzlich eigenständige HTML-Seiten für `/tracking`, `/training`, `/challenges`, `/ueber-vyra` und `/faq` sowie sieben Challenge-Detailseiten unter `/challenges/<name>`. `build.mjs` kopiert diese Verzeichnisse nach `dist/`; direkte Aufrufe funktionieren ohne clientseitiges Routing.
-
-`depth.js` enthält Perspektivbewegungen, Lichtverfolgung und die Bedienung des Entdecken-Menüs. CSS ergänzt animierte räumliche Ringe, Hover-Effekte und progressive View Transitions. `prefers-reduced-motion` deaktiviert Bewegungen; Texte und Navigation bleiben ohne Animation nutzbar. Touch-Geräte erhalten keine Maus-Tilt-Effekte.
-
-## Interaktion
-
-- Sticky Navigation mit mobilem Menü, aktivem Abschnitt und Scroll-Fortschritt
-- Animierte Beispielringe; ruhiger Seitenaufbau ohne wiederholte Produktfolien
-- Durchgehend lesbare Inhalte, räumliche Ebenen und deaktivierbare Animationen
-- Echte Unterseiten und sieben eigenständige Challenge-Detailseiten
-- Native, per Tastatur bedienbare Dialoge, sieben Challenge-Optionen und Trainings-Tabs mit Pfeiltasten
-- Bei `prefers-reduced-motion` keine Scroll-Animationen und keine Parallax
-- Keine Analytics, externen Schriftarten oder externen Bildquellen voreingestellt
-
-## Vercel
-
-Repository importieren. Framework: Other. Build: `npm run build`. Output: `dist`. Die Einstellungen sind in `vercel.json` hinterlegt. GitHub-Remote und Vercel-Anmeldung müssen für die Veröffentlichung verbunden sein.
+Startseite `/`, Leistungen `/leistungen`, Referenzen `/projekte`, Vesta `/projekte/vesta`, Bauklar `/projekte/bauklar`, Über VYRA `/ueber-uns`, Kontakt `/kontakt` sowie Impressum, Website-Datenschutz und Cookie-Informationen. Frühere Produkt- und Rhythm-Marketing-URLs leiten auf das neue Angebot um. Bestehende App-Rechtstexte und Apple-Verifikation sind davon unabhängig.
 
 ## Kontaktformular und Freischaltung
 
@@ -52,8 +26,18 @@ Hosting über Vercel: geltenden AVV und Übermittlungsgrundlage prüfen. IONOS: 
 
 Keine optionalen Cookies oder Speicherzugriffe im Website-Code. `/cookies` informiert über den Stand; ein Zustimmungsbanner ist bei diesem Funktionsumfang nicht vorgesehen. App-Datenschutz ist gesondert zu erstellen.
 
-## Markenauftritt und Produktseite von Rhythm (25.10.2026)
+## VYRA Software Studio – 26.11.2026
 
-Verbindlicher App-Name laut Betreiber: **VYRA Rhythm**. Das vom Betreiber gelieferte Original-Logo liegt unverändert unter `assets/vyra-logo-original.jpg` und wird in Navigation und Footer über einen CSS-Bildausschnitt dargestellt. Das Favicon ist eine kleine SVG-Umsetzung des dreiteiligen Blattzeichens. Korall und Nachtblau greifen die Logo-Farben auf.
+Die öffentliche Marketingwebsite wurde auf individuelle Softwareentwicklung von der Prozessanalyse bis zur Einführung ausgerichtet. `studio.css` und `studio.js` sind unabhängig vom früheren Rhythm-Layout. Leistungen, Projekte (Vesta für Claus R. Menges und Bauklar für Paribus), Über VYRA und das vorhandene Kontaktformular bilden den neuen Auftritt. Kunden und die Zuordnung zu den offiziellen Websites wurden vom Betreiber bestätigt. Bauklar ist der für dieses Projekt gewählte Name. Projektgrafiken sind ausdrücklich Visualisierungen, keine tatsächlichen Produkt-Screenshots. Keine Leistungskennzahlen, Kundenstimmen oder Hackathon-Auszeichnungen wurden erfunden.
 
-Die Rhythm-Produktseite verwendet ein echtes Sportfoto von Jenny Hill (`assets/vyra-running-jenny-hill.jpg`), kostenlos kommerziell nutzbar unter der Unsplash License. Es ist ein illustratives Sportmotiv, keine Kundenempfehlung. Das Motiv wird lokal ausgeliefert. Quelle: https://unsplash.com/photos/man-running-on-road-near-grass-field-mQVWb7kUoOE. Lizenz: https://unsplash.com/license. Lizenznachweis und Abrufdatum sind in `assets/photo-license.txt` dokumentiert. Das frühere KI-Motiv wird nicht mehr verwendet. Die App-Ansicht darunter verwendet weiterhin ausschließlich die vorhandene, als Designstand gekennzeichnete Produktvisualisierung. Die Rhythm-Produktseite führt über eigenständige redaktionelle Abschnitte zu den bestehenden Unterseiten. Keine neuen App-Funktionen, Preise oder Wirkungsversprechen wurden hinzugefügt.
+### Weitere Kundenlogos ergänzen
+
+1. Freigegebenes Original-Logo unter `assets/clients/` speichern.
+2. In `clients.js` einen Eintrag mit `name` und `logo` ergänzen; `project` (interne Projektseite) oder `website` (Kunden-Website) sind optional.
+3. Bauen und veröffentlichen. Beide Ticker-Gruppen werden automatisch erstellt. Die Bewegung läuft von links nach rechts, lässt sich pausieren und wird bei reduzierter Bewegung deaktiviert.
+
+Originalquellen: Menges https://www.cr-menges.de/wp-content/uploads/2026/05/cr-menges-immobilienmakler-giessen-2.webp ; Paribus SVG aus dem Header von https://www.paribus.de/ . Die Marken bleiben Eigentum der jeweiligen Rechteinhaber. Verwendung als Kundenreferenz entsprechend Betreiberauftrag.
+
+Architekturmotiv: Leonhard Niederwimmer, https://unsplash.com/photos/a-view-of-a-city-with-tall-buildings-jMBCVbsgquU ; kostenlose Unsplash License https://unsplash.com/license ; geprüft am 26.11.2026, lokal ausgeliefert. Es handelt sich um ein Stockmotiv, kein Foto eines VYRA-Büros. Vorlage für die visuelle Richtung war pencilrec.de; Texte, Code, Projektdarstellungen und Bildmotiv wurden eigenständig umgesetzt. Keine Produkte, Hackathon- oder Pressebelege der Referenz wurden übernommen.
+
+Bestehende Rhythm-Marketing-URLs leiten zu den neuen Leistungen/Projekten weiter. `/app/` und die separat vorhandene Arbeit am Apple-Verifier werden nicht verändert. Vorbestehende uncommittete Änderungen an package.json und package-lock.json gehören nicht zu dieser Umstellung.

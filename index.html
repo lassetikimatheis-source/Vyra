@@ -1,103 +1,356 @@
 <!doctype html>
 <html lang="de">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#101113">
-  <meta name="description" content="VYRA berät Unternehmen und entwickelt individuelle Software. Entdecken Sie Vesta, BauKontur und VYRA Rhythm.">
-  <title>VYRA — Softwareberatung &amp; individuelle Software</title>
-  <link rel="stylesheet" href="/vyra.css">
-  <script src="/skyline.js" defer></script>
-</head>
-<body class="home">
-  <a class="skip-link" href="#inhalt">Zum Inhalt</a>
-  <header class="site-header-wrap">
-  <div class="site-header wrap">
-    <a class="brand" href="/" aria-label="VYRA Startseite">VYRA<span>.</span></a>
-    <nav aria-label="Hauptnavigation">
-      <a href="#leistungen">Leistungen</a>
-      <a href="#produkte">Produkte</a>
-      <a href="#kunden">Kunden</a>
-    </nav>
-    <a class="header-contact" href="/kontakt">Kontakt <span class="arrow" aria-hidden="true"></span></a>
-  </div>
-  </header>
-
-  <main id="inhalt">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-image" aria-hidden="true"></div>
-      <div class="skyline" hidden>
-        <video id="skyline-video" muted loop playsinline preload="none" aria-label="Drohnenflug über eine Skyline">
-          <source src="https://videos.pexels.com/video-files/12190286/12190286_1280_720_60fps.mp4" type="video/mp4">
-          <source src="https://videos.pexels.com/video-files/12190286/12190286_3840_2160_60fps.mp4" type="video/mp4">
-        </video>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#101110" />
+    <title>Individuelle Software für dein Unternehmen — VYRA</title>
+    <meta
+      name="description"
+      content="VYRA entwickelt individuelle Software für Unternehmen. Von der Prozessanalyse über die Entwicklung bis zum fertigen Produkt."
+    />
+    <meta
+      property="og:title"
+      content="Individuelle Software für dein Unternehmen — VYRA"
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/assets/favicon.svg" />
+    <link rel="stylesheet" href="/studio.css" />
+    <script src="/clients.js" defer></script>
+    <script src="/studio.js" defer></script>
+  </head>
+  <body class="studio studio-home">
+    <a class="studio-skip" href="#main">Zum Inhalt</a>
+    <header class="studio-header">
+      <div class="studio-nav shell">
+        <a class="studio-brand" href="/" aria-label="VYRA Startseite"
+          ><span class="studio-emblem" aria-hidden="true"
+            ><img
+              src="/assets/vyra-logo-original.jpg"
+              alt=""
+              width="1080"
+              height="1350" /></span
+          ><span
+            >VYRA<span class="brand-descriptor">Software Studio</span></span
+          ></a
+        >
+        <nav class="studio-desktop" aria-label="Hauptnavigation">
+          <a href="/#leistungen">Leistungen</a><a href="/#prozess">Prozess</a
+          ><a href="/projekte">Projekte</a
+          ><a href="/kontakt" class="nav-contact">Projekt besprechen</a>
+        </nav>
+        <button
+          class="studio-menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="studio-mobile"
+          aria-label="Menü öffnen"
+        >
+          <span></span><span></span>
+        </button>
       </div>
-      <div class="hero-content wrap">
-        <p class="eyebrow"><span class="signal"></span> Softwareberatung &amp; Entwicklung</p>
-        <h1 id="hero-title">Gute Software.<br>Passgenau gebaut.</h1>
-        <p class="hero-description">VYRA berät Unternehmen, entwickelt individuelle Anwendungen und bietet eigene Software für Schadensmanagement und Baukosten an.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="/kontakt">Projekt besprechen <span class="arrow" aria-hidden="true"></span></a>
-          <a class="hero-link" href="#produkte">Produkte entdecken <span aria-hidden="true">↓</span></a>
+      <nav id="studio-mobile" aria-label="Mobile Navigation" hidden>
+        <a href="/#leistungen">Leistungen</a><a href="/#prozess">Prozess</a
+        ><a href="/projekte">Projekte</a><a href="/ueber-uns">Über VYRA</a
+        ><a href="/kontakt">Projekt besprechen</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="studio-hero">
+        <img
+          class="studio-hero-image"
+          src="/assets/vyra-studio-frankfurt.jpg"
+          alt=""
+          width="3000"
+          height="1967"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="studio-hero-shade"></div>
+        <div class="hero-studio-content shell">
+          <h1>Dein Prozess.<br />Deine Software.</h1>
+          <p>
+            Wir verstehen deine Abläufe und entwickeln<br
+              class="desktop-break"
+            />
+            die Software, die dazu passt.
+          </p>
+          <a class="hero-studio-link" href="/kontakt"
+            >Lass uns dein Projekt besprechen</a
+          >
         </div>
-      </div>
-      <button class="skyline-toggle" type="button" aria-controls="skyline-video" hidden>Video abspielen</button>
-    </section>
-
-    <section id="kunden" class="customer-band" aria-labelledby="kunden-titel">
-      <div class="wrap">
-        <h2 id="kunden-titel" class="eyebrow">Ausgewählte Kunden</h2>
-        <ul>
-          <li><img class="customer-logo menges-logo" src="/assets/customers/menges.svg" width="154" height="177" alt="Hausverwaltung Menges"></li>
-          <li><img class="customer-logo paribus-logo" src="/assets/customers/paribus.svg" width="174" height="32" alt="Paribus"></li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="produkte" class="products">
-      <div class="wrap">
-        <p class="eyebrow">Unser Portfolio</p>
-        <h2>Software im Einsatz.</h2>
-        <div class="product-grid">
-          <a class="product product-vesta" href="/vesta">
-            <div class="product-caption"><div><p>Schadensmanagement</p><h3>Vesta</h3></div><span class="arrow" aria-hidden="true"></span></div>
-            <div class="mockup claims" aria-hidden="true">
-              <div class="mockup-header"><strong>Schadensfälle</strong><span>Übersicht</span></div>
-              <div class="mockup-row"><span></span><i></i><b></b></div>
-              <div class="mockup-row"><span></span><i></i><b></b></div>
-              <div class="mockup-row"><span></span><i></i><b></b></div>
-            </div>
-          </a>
-          <a class="product product-bau" href="/baukontur">
-            <div class="product-caption"><div><p>Baukostenübersicht</p><h3>BauKontur</h3></div><span class="arrow" aria-hidden="true"></span></div>
-            <div class="mockup costs" aria-hidden="true">
-              <div class="mockup-header"><strong>Projektkosten</strong><span>Übersicht</span></div>
-              <div class="mockup-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            </div>
-          </a>
-          <a class="product product-rhythm" href="/rhythm">
-            <div class="product-caption"><div><p>Training, Ernährung und Erholung</p><h3>VYRA Rhythm</h3></div><span class="arrow" aria-hidden="true"></span></div>
-          </a>
+        <div class="hero-studio-bottom shell">
+          <span>Von der ersten Frage bis zum fertigen Produkt.</span
+          ><a href="#leistungen">VYRA kennenlernen</a>
         </div>
+      </section>
+      <section class="client-section" aria-labelledby="clients-title">
+        <div class="client-heading shell">
+          <h2 id="clients-title">
+            Software für Unternehmen, die weiterdenken.
+          </h2>
+          <button
+            class="ticker-toggle"
+            type="button"
+            hidden
+            aria-pressed="false"
+          >
+            Animation pausieren
+          </button>
+        </div>
+        <div class="client-window" data-client-strip>
+          <div class="logo-fallback">
+            <a href="/projekte/vesta"
+              ><img
+                src="/assets/clients/menges.webp"
+                alt="Claus R. Menges GmbH"
+                width="260"
+                height="100" /></a
+            ><a href="/projekte/bauklar"
+              ><img
+                src="/assets/clients/paribus.svg"
+                alt="Paribus"
+                width="240"
+                height="60"
+            /></a>
+          </div>
+        </div>
+      </section>
+      <section id="leistungen" class="studio-section shell">
+        <div class="section-lead">
+          <h2>Software beginnt<br />mit Verstehen.</h2>
+          <div>
+            <p class="large-copy">
+              Dein Unternehmen arbeitet auf seine eigene Art. Deine Software
+              sollte das auch können.
+            </p>
+            <p>
+              Wir schauen uns an, wo Informationen verloren gehen, Arbeit
+              doppelt passiert oder vorhandene Tools an ihre Grenzen kommen.
+              Daraus entwickeln wir eine Lösung, die sich an deinem
+              tatsächlichen Bedarf orientiert.
+            </p>
+            <a class="underlined-link" href="/leistungen"
+              >Unsere Leistungen kennenlernen</a
+            >
+          </div>
+        </div>
+        <div class="service-grid">
+          <article>
+            <div class="service-icon icon-process" aria-hidden="true">
+              <i></i><i></i><i></i>
+            </div>
+            <h3>Prozesse verstehen.</h3>
+            <p>
+              Gemeinsam klären wir Abläufe, Anforderungen und Prioritäten. So
+              wird aus einem Problem ein umsetzbarer Plan.
+            </p>
+          </article>
+          <article>
+            <div class="service-icon icon-build" aria-hidden="true">
+              <i></i><i></i>
+            </div>
+            <h3>Passend entwickeln.</h3>
+            <p>
+              Eine eigene Anwendung, ein internes Tool oder eine Schnittstelle.
+              Entwickelt für die Menschen, die damit arbeiten.
+            </p>
+          </article>
+          <article>
+            <div class="service-icon icon-grow" aria-hidden="true">
+              <i></i><i></i><i></i>
+            </div>
+            <h3>Im Alltag begleiten.</h3>
+            <p>
+              Testen, einführen, weiterdenken. Damit die Lösung im Betrieb
+              ankommt und mit neuen Anforderungen wachsen kann.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="work-section shell" id="projekte">
+        <div class="section-heading">
+          <h2>Aus Anforderungen<br />werden Anwendungen.</h2>
+          <a class="underlined-link" href="/projekte"
+            >Unsere Projekte ansehen</a
+          >
+        </div>
+        <div class="project-grid">
+          <a class="project-card" href="/projekte/vesta"
+            ><div class="project-art vesta-art" aria-hidden="true">
+              <div class="vesta-symbol"><i></i><i></i><i></i></div>
+              <span class="project-art-name">Vesta</span
+              ><span class="visual-note">Projektvisualisierung</span>
+            </div>
+            <div class="project-caption">
+              <div>
+                <h3>Vesta</h3>
+                <p>Individuelle Software für die Hausverwaltung</p>
+              </div>
+              <span>Claus R. Menges GmbH</span>
+            </div></a
+          ><a class="project-card" href="/projekte/bauklar"
+            ><div class="project-art bauklar-art" aria-hidden="true">
+              <div class="bauklar-bars">
+                <i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <span class="project-art-name">Bauklar</span
+              ><span class="visual-note">Projektvisualisierung</span>
+            </div>
+            <div class="project-caption">
+              <div>
+                <h3>Bauklar</h3>
+                <p>Ein Tool zur Auswertung von Baukosten</p>
+              </div>
+              <span>Paribus</span>
+            </div></a
+          >
+        </div>
+      </section>
+      <section class="process-section" id="prozess">
+        <div class="shell">
+          <div class="section-lead">
+            <h2>Ein klarer Weg.<br />Bis es funktioniert.</h2>
+            <p class="large-copy">
+              Du bringst deinen Arbeitsalltag mit. Wir bringen Struktur,
+              Gestaltung und Entwicklung zusammen.
+            </p>
+          </div>
+          <div class="process-grid">
+            <article>
+              <span class="process-node" aria-hidden="true"></span>
+              <h3>Verstehen</h3>
+              <p>
+                Wir sprechen über deinen Prozess und die Menschen dahinter. Was
+                läuft heute? Was soll besser werden?
+              </p>
+            </article>
+            <article>
+              <span class="process-node" aria-hidden="true"></span>
+              <h3>Konkretisieren</h3>
+              <p>
+                Wir definieren Funktionen, gestalten die Bedienung und stimmen
+                Umfang und Umsetzung mit dir ab.
+              </p>
+            </article>
+            <article>
+              <span class="process-node" aria-hidden="true"></span>
+              <h3>Entwickeln</h3>
+              <p>
+                Du siehst die Lösung entstehen. Wir entwickeln, testen und holen
+                dein Feedback an den entscheidenden Stellen ein.
+              </p>
+            </article>
+            <article>
+              <span class="process-node" aria-hidden="true"></span>
+              <h3>Einführen</h3>
+              <p>
+                Wir bereiten den Einsatz vor, übergeben die Anwendung und
+                stimmen die nächsten Schritte für den Betrieb ab.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="studio-statement shell">
+        <p>
+          Gute Software passt nicht nur<br />in dein Unternehmen.<br /><span
+            >Sie passt zu deiner Arbeit.</span
+          >
+        </p>
+        <div>
+          <span>VYRA · Individuelle Softwareentwicklung</span
+          ><a class="underlined-link" href="/ueber-uns">Die Idee hinter VYRA</a>
+        </div>
+      </section>
+      <section class="faq-section shell" id="fragen">
+        <div>
+          <h2>Bevor wir <br />loslegen.</h2>
+          <p>Die häufigsten Fragen zur Zusammenarbeit.</p>
+        </div>
+        <div class="studio-faq">
+          <details open>
+            <summary>Was entwickelt VYRA?</summary>
+            <p>
+              Individuelle Software für Unternehmen: interne Anwendungen,
+              Web-Apps, Portale, Auswertungstools und Verbindungen zwischen
+              bestehenden Systemen. Ausgangspunkt ist immer der konkrete
+              Prozess, den du verbessern möchtest.
+            </p>
+          </details>
+          <details>
+            <summary>Muss ich schon ein fertiges Konzept haben?</summary>
+            <p>
+              Nein. Ein Ablauf, der im Alltag zu viel Zeit kostet, reicht als
+              Ausgangspunkt. Wir strukturieren gemeinsam die Anforderungen und
+              klären, was die Software tatsächlich leisten soll.
+            </p>
+          </details>
+          <details>
+            <summary>Was kostet individuelle Software?</summary>
+            <p>
+              Das hängt vom Funktionsumfang, den Schnittstellen und den
+              Anforderungen an den Betrieb ab. Nach der gemeinsamen Klärung
+              bekommst du ein Angebot mit klar abgegrenztem Umfang. Einen
+              pauschalen Preis nennen wir dir nicht ohne diesen Kontext.
+            </p>
+          </details>
+          <details>
+            <summary>Können bestehende Systeme angebunden werden?</summary>
+            <p>
+              Ja, sofern die Systeme geeignete Schnittstellen oder
+              Exportmöglichkeiten bieten. Wir prüfen die technischen
+              Möglichkeiten, bevor wir eine Integration einplanen.
+            </p>
+          </details>
+          <details>
+            <summary>Was passiert nach dem Go-live?</summary>
+            <p>
+              Übergabe, Dokumentation und der weitere Betrieb werden im Projekt
+              abgestimmt. Auch Wartung und Weiterentwicklung können wir
+              gemeinsam planen.
+            </p>
+          </details>
+          <details>
+            <summary>Wie geht ihr mit Datenschutz um?</summary>
+            <p>
+              Wir berücksichtigen die verarbeiteten Daten, Zugriffsrechte und
+              das passende Hosting schon bei der Planung. Welche rechtlichen und
+              technischen Maßnahmen nötig sind, wird für das jeweilige Projekt
+              geprüft.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="studio-cta shell">
+        <h2>Was hält deinen<br />Alltag gerade auf?</h2>
+        <div>
+          <p>
+            Eine Idee, ein umständlicher Ablauf oder ein konkretes
+            Softwareprojekt. Lass uns darüber sprechen.
+          </p>
+          <a class="solid-button" href="/kontakt">Projekt besprechen</a>
+        </div>
+      </section>
+    </main>
+    <footer class="studio-footer shell">
+      <div class="footer-main">
+        <a class="footer-wordmark" href="/"
+          >VYRA<span>Individuelle Software. Durchdacht umgesetzt.</span></a
+        ><a class="footer-mail" href="mailto:info@vyra.solutions"
+          >info@vyra.solutions</a
+        >
       </div>
-    </section>
-
-    <section id="leistungen" class="services wrap">
-      <div><p class="eyebrow">Leistungen</p><h2>Von der Idee zur Anwendung.</h2></div>
-      <dl>
-        <div><dt>Softwareberatung</dt><dd>Wir schauen uns Ihre Abläufe an, klären Anforderungen und helfen Ihnen bei der Entscheidung, welche Software zu Ihrem Unternehmen passt.</dd></div>
-        <div><dt>Individuelle Entwicklung</dt><dd>Wir entwickeln Anwendungen für Ihre internen Abläufe und die Anforderungen Ihres Teams.</dd></div>
-        <div><dt>Eigene Softwareprodukte</dt><dd>Mit Vesta und BauKontur bieten wir Lösungen für Schadensmanagement und Baukostenübersicht an.</dd></div>
-      </dl>
-    </section>
-
-    <section class="contact-band">
-      <div class="wrap"><h2>Was möchten Sie lösen?</h2><a class="button primary" href="/kontakt">Kontakt aufnehmen <span class="arrow" aria-hidden="true"></span></a></div>
-    </section>
-  </main>
-  <footer class="site-footer wrap">
-    <a class="brand" href="/" aria-label="VYRA Startseite">VYRA<span>.</span></a>
-    <nav aria-label="Weitere Informationen"><a href="/kontakt">Kontakt</a><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a></nav>
-  </footer>
-</body>
+      <div class="footer-bottom-studio">
+        <span>© <span data-year>2026</span> VYRA · Lasse Matheis</span>
+        <nav aria-label="Weitere Informationen">
+          <a href="/ueber-uns">Über VYRA</a><a href="/kontakt">Kontakt</a
+          ><a href="/impressum">Impressum</a
+          ><a href="/datenschutz">Datenschutz</a
+          ><a href="/cookies">Cookie-Informationen</a>
+        </nav>
+        <span>Pohlheim, Deutschland</span>
+      </div>
+    </footer>
+  </body>
 </html>

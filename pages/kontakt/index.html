@@ -3,89 +3,147 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#f5f5f7" />
-    <title>Kontakt — VYRA</title>
-    <link rel="stylesheet" href="/vyra.css" />
+    <meta name="theme-color" content="#101110" />
+    <title>Projekt besprechen — VYRA</title>
+    <meta
+      name="description"
+      content="VYRA entwickelt individuelle Software für Unternehmen. Von der Prozessanalyse über die Entwicklung bis zum fertigen Produkt."
+    />
+    <meta property="og:title" content="Projekt besprechen — VYRA" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/assets/favicon.svg" />
+    <link rel="stylesheet" href="/studio.css" />
+    <script src="/studio.js" defer></script>
     <script src="/contact.js" defer></script>
   </head>
-  <body>
-    <a class="skip-link" href="#inhalt">Zum Inhalt</a>
-    <header class="site-header wrap">
-      <a class="brand" href="/" aria-label="VYRA Startseite"
-        >VYRA<span>.</span></a
-      ><a href="/">Zur Startseite</a>
+  <body class="studio">
+    <a class="studio-skip" href="#main">Zum Inhalt</a>
+    <header class="studio-header">
+      <div class="studio-nav shell">
+        <a class="studio-brand" href="/" aria-label="VYRA Startseite"
+          ><span class="studio-emblem" aria-hidden="true"
+            ><img
+              src="/assets/vyra-logo-original.jpg"
+              alt=""
+              width="1080"
+              height="1350" /></span
+          ><span
+            >VYRA<span class="brand-descriptor">Software Studio</span></span
+          ></a
+        >
+        <nav class="studio-desktop" aria-label="Hauptnavigation">
+          <a href="/#leistungen">Leistungen</a><a href="/#prozess">Prozess</a
+          ><a href="/projekte">Projekte</a
+          ><a href="/kontakt" class="nav-contact">Projekt besprechen</a>
+        </nav>
+        <button
+          class="studio-menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="studio-mobile"
+          aria-label="Menü öffnen"
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+      <nav id="studio-mobile" aria-label="Mobile Navigation" hidden>
+        <a href="/#leistungen">Leistungen</a><a href="/#prozess">Prozess</a
+        ><a href="/projekte">Projekte</a><a href="/ueber-uns">Über VYRA</a
+        ><a href="/kontakt">Projekt besprechen</a>
+      </nav>
     </header>
-    <main id="inhalt" class="detail wrap contact-page">
-      <h1>Kontakt</h1>
-      <p>Sie möchten ein Softwareprojekt besprechen, sich zu einem Produkt informieren oder Feedback zu Rhythm geben? Schreiben Sie uns.</p>
-      <p>
-        Direkt per E-Mail:
-        <a href="mailto:info@vyra.solutions">info@vyra.solutions</a>
-      </p>
-      <form id="contact-form" class="contact-form">
-        <p id="form-status" role="status" aria-live="polite">
-          Versandverbindung wird geprüft …
-        </p>
-        <fieldset disabled>
-          <legend>Ihre Nachricht</legend>
-          <label for="contact-name">Name <span>(freiwillig)</span></label
-          ><input
-            id="contact-name"
-            name="name"
-            autocomplete="name"
-            maxlength="120"
-          /><label for="contact-email"
-            >E-Mail-Adresse <span>(erforderlich)</span></label
-          ><input
-            id="contact-email"
-            name="email"
-            type="email"
-            autocomplete="email"
-            maxlength="254"
-            required
-          /><label for="contact-message"
-            >Nachricht <span>(erforderlich)</span></label
-          ><textarea
-            id="contact-message"
-            name="message"
-            rows="7"
-            minlength="10"
-            maxlength="5000"
-            required
-            aria-describedby="contact-privacy"
-          ></textarea>
-          <div class="form-trap" aria-hidden="true">
-            <label for="company">Dieses Feld bitte leer lassen</label
-            ><input
-              id="company"
-              name="company"
-              autocomplete="off"
-              tabindex="-1"
-            />
-          </div>
-          <p id="contact-privacy">
-            Bitte keine Gesundheitsdaten oder Passwörter senden. Wir verwenden
-            deine Angaben zur Bearbeitung deiner Anfrage. Mehr in der
-            <a href="/datenschutz">Datenschutzerklärung</a>.
+    <main id="main">
+      <section class="contact-intro shell">
+        <div>
+          <h1>Dein Projekt<br />beginnt hier.</h1>
+          <p>
+            Erzähl uns, was du vorhast oder welcher Ablauf dich gerade aufhält.
+            Ein fertiges Konzept brauchst du dafür nicht.
           </p>
-          <button class="button" type="submit">Nachricht senden ↗</button>
-        </fieldset>
-      </form>
-      <noscript
-        ><p>
-          Das Formular benötigt JavaScript. Alternativ kannst du an die oben
-          genannte E-Mail-Adresse schreiben.
-        </p></noscript
-      >
+          <a class="contact-address" href="mailto:info@vyra.solutions"
+            >info@vyra.solutions</a
+          >
+          <p class="contact-person">
+            Dein Ansprechpartner: Lasse Matheis<br />Pohlheim, Deutschland
+          </p>
+        </div>
+        <div class="contact-form-wrap">
+          <form id="contact-form" class="contact-form">
+            <p id="form-status" role="status" aria-live="polite">
+              Versandverbindung wird geprüft …
+            </p>
+            <fieldset disabled>
+              <legend>Deine Nachricht</legend>
+              <label for="contact-name">Name <span>(freiwillig)</span></label
+              ><input
+                id="contact-name"
+                name="name"
+                autocomplete="name"
+                maxlength="120"
+              /><label for="contact-email"
+                >E-Mail-Adresse <span>(erforderlich)</span></label
+              ><input
+                id="contact-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                maxlength="254"
+                required
+              /><label for="contact-message"
+                >Nachricht <span>(erforderlich)</span></label
+              ><textarea
+                id="contact-message"
+                name="message"
+                rows="7"
+                minlength="10"
+                maxlength="5000"
+                required
+                aria-describedby="contact-privacy"
+              ></textarea>
+              <div class="form-trap" aria-hidden="true">
+                <label for="company">Dieses Feld bitte leer lassen</label
+                ><input
+                  id="company"
+                  name="company"
+                  autocomplete="off"
+                  tabindex="-1"
+                />
+              </div>
+              <p id="contact-privacy">
+                Bitte keine Passwörter oder vertraulichen Unterlagen senden. Wir
+                verwenden deine Angaben zur Bearbeitung deiner Anfrage. Mehr in
+                der
+                <a href="/datenschutz">Datenschutzerklärung</a>.
+              </p>
+              <button class="button" type="submit">Nachricht senden</button>
+            </fieldset>
+          </form>
+          <noscript
+            ><p>
+              Das Formular benötigt JavaScript. Du kannst uns auch direkt per
+              E-Mail schreiben.
+            </p></noscript
+          >
+        </div>
+      </section>
     </main>
-    <footer class="site-footer wrap">
-      <div class="footer-bottom">
-        <span>© 2026 VYRA</span>
-        <nav aria-label="Rechtliche Informationen">
-          <a href="/kontakt">Kontakt</a><a href="/impressum">Impressum</a
+    <footer class="studio-footer shell">
+      <div class="footer-main">
+        <a class="footer-wordmark" href="/"
+          >VYRA<span>Individuelle Software. Durchdacht umgesetzt.</span></a
+        ><a class="footer-mail" href="mailto:info@vyra.solutions"
+          >info@vyra.solutions</a
+        >
+      </div>
+      <div class="footer-bottom-studio">
+        <span>© <span data-year>2026</span> VYRA · Lasse Matheis</span>
+        <nav aria-label="Weitere Informationen">
+          <a href="/ueber-uns">Über VYRA</a><a href="/kontakt">Kontakt</a
+          ><a href="/impressum">Impressum</a
           ><a href="/datenschutz">Datenschutz</a
           ><a href="/cookies">Cookie-Informationen</a>
         </nav>
+        <span>Pohlheim, Deutschland</span>
       </div>
     </footer>
   </body>

@@ -3,79 +3,126 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#0a0b0e" />
+    <meta name="theme-color" content="#101110" />
     <title>Cookie-Informationen — VYRA</title>
+    <meta
+      name="description"
+      content="VYRA entwickelt individuelle Software für Unternehmen. Von der Prozessanalyse über die Entwicklung bis zum fertigen Produkt."
+    />
+    <meta property="og:title" content="Cookie-Informationen — VYRA" />
+    <meta property="og:type" content="website" />
     <link rel="icon" href="/assets/favicon.svg" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/studio.css" />
+    <script src="/studio.js" defer></script>
   </head>
-  <body>
-    <a class="skip" href="#inhalt">Zum Inhalt</a>
-    <header class="header">
-      <a class="brand" href="/" aria-label="VYRA Startseite"
-        >VYRA<span class="brand-dot"></span></a
-      ><a href="/">Zur Startseite ↗</a>
+  <body class="studio">
+    <a class="studio-skip" href="#main">Zum Inhalt</a>
+    <header class="studio-header">
+      <div class="studio-nav shell">
+        <a class="studio-brand" href="/" aria-label="VYRA Startseite"
+          ><span class="studio-emblem" aria-hidden="true"
+            ><img
+              src="/assets/vyra-logo-original.jpg"
+              alt=""
+              width="1080"
+              height="1350" /></span
+          ><span
+            >VYRA<span class="brand-descriptor">Software Studio</span></span
+          ></a
+        >
+        <nav class="studio-desktop" aria-label="Hauptnavigation">
+          <a href="/#leistungen">Leistungen</a><a href="/#prozess">Prozess</a
+          ><a href="/projekte">Projekte</a
+          ><a href="/kontakt" class="nav-contact">Projekt besprechen</a>
+        </nav>
+        <button
+          class="studio-menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="studio-mobile"
+          aria-label="Menü öffnen"
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+      <nav id="studio-mobile" aria-label="Mobile Navigation" hidden>
+        <a href="/#leistungen">Leistungen</a><a href="/#prozess">Prozess</a
+        ><a href="/projekte">Projekte</a><a href="/ueber-uns">Über VYRA</a
+        ><a href="/kontakt">Projekt besprechen</a>
+      </nav>
     </header>
-    <main id="inhalt" class="legal-page">
-      <h1>Cookie-Informationen</h1>
-      <p>Deine Privatsphäre braucht keine unnötigen Schalter.</p>
-      <section class="privacy-summary">
-        <h2>Aktueller Stand</h2>
-        <dl>
-          <div>
-            <dt>Analyse &amp; Statistik</dt>
-            <dd>Nicht eingesetzt</dd>
-          </div>
-          <div>
-            <dt>Werbung &amp; Marketing</dt>
-            <dd>Nicht eingesetzt</dd>
-          </div>
-          <div>
-            <dt>Externe Schriftarten &amp; Social-Media-Einbettungen</dt>
-            <dd>Nicht eingesetzt</dd>
-          </div>
-          <div>
-            <dt>
-              Cookies, Local Storage &amp; Session Storage im Website-Code
-            </dt>
-            <dd>Nicht eingesetzt</dd>
-          </div>
-        </dl>
-      </section>
-      <section>
-        <h2>Warum du keinen Zustimmungsbanner siehst</h2>
-        <p>
-          Diese Website lädt keine optionalen Tracking-Dienste. Es gibt deshalb
-          derzeit keine Einwilligungen zu erteilen oder zu widerrufen. Ein
-          Zustimmungsbanner würde dir Einstellungen für Funktionen anbieten, die
-          hier gar nicht eingesetzt werden.
-        </p>
-        <p>
-          Beim Seitenabruf verarbeitet der Hosting-Anbieter technische
-          Verbindungsdaten. Das ist von Cookies und vergleichbaren Zugriffen auf
-          dein Gerät zu unterscheiden. Mehr dazu steht in der
-          <a href="/datenschutz">Datenschutzerklärung</a>.
-        </p>
-      </section>
-      <section>
-        <h2>Falls sich das ändert</h2>
-        <p>
-          Optionale Analyse- oder Werbedienste werden erst nach einer
-          gesonderten datenschutzrechtlichen Prüfung und, soweit erforderlich,
-          deiner vorherigen Einwilligung aktiviert. Unbedingt erforderliche
-          technische Funktionen können unter die Ausnahme des § 25 Abs. 2 TDDDG
-          fallen.
-        </p>
-        <p>Stand: 25. Oktober 2026</p>
-      </section>
+    <main id="main">
+      <article class="studio-legal shell">
+        <h1>Cookie-Informationen</h1>
+        <p>Deine Privatsphäre braucht keine unnötigen Schalter.</p>
+        <section class="privacy-summary">
+          <h2>Aktueller Stand</h2>
+          <dl>
+            <div>
+              <dt>Analyse &amp; Statistik</dt>
+              <dd>Nicht eingesetzt</dd>
+            </div>
+            <div>
+              <dt>Werbung &amp; Marketing</dt>
+              <dd>Nicht eingesetzt</dd>
+            </div>
+            <div>
+              <dt>Externe Schriftarten &amp; Social-Media-Einbettungen</dt>
+              <dd>Nicht eingesetzt</dd>
+            </div>
+            <div>
+              <dt>
+                Cookies, Local Storage &amp; Session Storage im Website-Code
+              </dt>
+              <dd>Nicht eingesetzt</dd>
+            </div>
+          </dl>
+        </section>
+        <section>
+          <h2>Warum du keinen Zustimmungsbanner siehst</h2>
+          <p>
+            Diese Website lädt keine optionalen Tracking-Dienste. Es gibt
+            deshalb derzeit keine Einwilligungen zu erteilen oder zu widerrufen.
+            Ein Zustimmungsbanner würde dir Einstellungen für Funktionen
+            anbieten, die hier gar nicht eingesetzt werden.
+          </p>
+          <p>
+            Beim Seitenabruf verarbeitet der Hosting-Anbieter technische
+            Verbindungsdaten. Das ist von Cookies und vergleichbaren Zugriffen
+            auf dein Gerät zu unterscheiden. Mehr dazu steht in der
+            <a href="/datenschutz">Datenschutzerklärung</a>.
+          </p>
+        </section>
+        <section>
+          <h2>Falls sich das ändert</h2>
+          <p>
+            Optionale Analyse- oder Werbedienste werden erst nach einer
+            gesonderten datenschutzrechtlichen Prüfung und, soweit erforderlich,
+            deiner vorherigen Einwilligung aktiviert. Unbedingt erforderliche
+            technische Funktionen können unter die Ausnahme des § 25 Abs. 2
+            TDDDG fallen.
+          </p>
+          <p>Stand: 25. Oktober 2026</p>
+        </section>
+      </article>
     </main>
-    <footer class="site-footer wrap">
-      <div class="footer-bottom">
-        <span>© 2026 VYRA</span>
-        <nav aria-label="Rechtliche Informationen">
-          <a href="/kontakt">Kontakt</a><a href="/impressum">Impressum</a
+    <footer class="studio-footer shell">
+      <div class="footer-main">
+        <a class="footer-wordmark" href="/"
+          >VYRA<span>Individuelle Software. Durchdacht umgesetzt.</span></a
+        ><a class="footer-mail" href="mailto:info@vyra.solutions"
+          >info@vyra.solutions</a
+        >
+      </div>
+      <div class="footer-bottom-studio">
+        <span>© <span data-year>2026</span> VYRA · Lasse Matheis</span>
+        <nav aria-label="Weitere Informationen">
+          <a href="/ueber-uns">Über VYRA</a><a href="/kontakt">Kontakt</a
+          ><a href="/impressum">Impressum</a
           ><a href="/datenschutz">Datenschutz</a
           ><a href="/cookies">Cookie-Informationen</a>
         </nav>
+        <span>Pohlheim, Deutschland</span>
       </div>
     </footer>
   </body>
