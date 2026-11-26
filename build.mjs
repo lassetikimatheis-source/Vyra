@@ -7,6 +7,8 @@ for (const file of [
   "robots.txt",
   "sitemap.xml",
   "styles.css",
+  "vyra.css",
+  "skyline.js",
   "app.js",
   "depth.js",
   "contact.js",

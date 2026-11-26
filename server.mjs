@@ -54,10 +54,9 @@ createServer(async (req, res) => {
         /* Try the next route. */
       }
     }
+    const notFound = await readFile(resolve(root, "404.html"));
     res.writeHead(404, { "Content-Type": "text/html; charset=utf-8" });
-    res.end(
-      '<!doctype html><html lang="de"><title>Seite nicht gefunden — Rhythm</title><body style="background:#0a0b0e;color:white;font-family:sans-serif;padding:60px"><h1>Hier geht es nicht weiter.</h1><p>Entdecke Rhythm auf der <a href="/" style="color:#b5a1e3">Startseite</a>.</p></body></html>',
-    );
+    res.end(notFound);
   } catch {
     res.writeHead(400);
     res.end("Ungültige Anfrage");

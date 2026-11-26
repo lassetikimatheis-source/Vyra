@@ -1,6 +1,6 @@
-# VYRA Rhythm
+# VYRA
 
-Deutschsprachige Produktwebsite auf bestehender HTML/CSS/JavaScript-Grundlage, mit Nodemailer ausschließlich für den serverseitigen Formularversand.
+Deutschsprachige Unternehmenswebsite für Softwareberatung, individuelle Entwicklung und die Produkte Vesta, BauKontur und VYRA Rhythm. Nodemailer wird serverseitig für das Kontaktformular verwendet.
 
 ## Lokal
 
@@ -22,7 +22,7 @@ Impressum und Website-Datenschutzerklärung wurden anhand der Betreiberangaben e
 
 ## Seitenstruktur
 
-Die Startseite dient als Einstieg. Unter `pages/` liegen eigenständige HTML-Seiten für `/tracking`, `/training`, `/challenges`, `/ueber-vyra` und `/faq` sowie sieben Challenge-Detailseiten unter `/challenges/<name>`. `build.mjs` kopiert diese Verzeichnisse nach `dist/`; direkte Aufrufe funktionieren ohne clientseitiges Routing.
+Die Startseite stellt VYRA als Softwareunternehmen vor. Die Produktseiten sind unter `/vesta`, `/baukontur` und `/rhythm` erreichbar. Für Rhythm liegen unter `pages/` zusätzlich eigenständige HTML-Seiten für `/tracking`, `/training`, `/challenges`, `/ueber-vyra` und `/faq` sowie sieben Challenge-Detailseiten unter `/challenges/<name>`. `build.mjs` kopiert diese Verzeichnisse nach `dist/`; direkte Aufrufe funktionieren ohne clientseitiges Routing.
 
 `depth.js` enthält Perspektivbewegungen, Lichtverfolgung und die Bedienung des Entdecken-Menüs. CSS ergänzt animierte räumliche Ringe, Hover-Effekte und progressive View Transitions. `prefers-reduced-motion` deaktiviert Bewegungen; Texte und Navigation bleiben ohne Animation nutzbar. Touch-Geräte erhalten keine Maus-Tilt-Effekte.
 
@@ -52,8 +52,8 @@ Hosting über Vercel: geltenden AVV und Übermittlungsgrundlage prüfen. IONOS: 
 
 Keine optionalen Cookies oder Speicherzugriffe im Website-Code. `/cookies` informiert über den Stand; ein Zustimmungsbanner ist bei diesem Funktionsumfang nicht vorgesehen. App-Datenschutz ist gesondert zu erstellen.
 
-## Markenauftritt und Startseite (25.10.2026)
+## Markenauftritt und Produktseite von Rhythm (25.10.2026)
 
 Verbindlicher App-Name laut Betreiber: **VYRA Rhythm**. Das vom Betreiber gelieferte Original-Logo liegt unverändert unter `assets/vyra-logo-original.jpg` und wird in Navigation und Footer über einen CSS-Bildausschnitt dargestellt. Das Favicon ist eine kleine SVG-Umsetzung des dreiteiligen Blattzeichens. Korall und Nachtblau greifen die Logo-Farben auf.
 
-Die Startseite verwendet ein echtes Sportfoto von Jenny Hill (`assets/vyra-running-jenny-hill.jpg`), kostenlos kommerziell nutzbar unter der Unsplash License. Es ist ein illustratives Sportmotiv, keine Kundenempfehlung. Das Motiv wird lokal ausgeliefert. Quelle: https://unsplash.com/photos/man-running-on-road-near-grass-field-mQVWb7kUoOE. Lizenz: https://unsplash.com/license. Lizenznachweis und Abrufdatum sind in `assets/photo-license.txt` dokumentiert. Das frühere KI-Motiv wird nicht mehr verwendet. Die App-Ansicht darunter verwendet weiterhin ausschließlich die vorhandene, als Designstand gekennzeichnete Produktvisualisierung. Die Startseite führt über eigenständige redaktionelle Abschnitte zu den bestehenden Unterseiten. Keine neuen App-Funktionen, Preise oder Wirkungsversprechen wurden hinzugefügt.
+Die Rhythm-Produktseite verwendet ein echtes Sportfoto von Jenny Hill (`assets/vyra-running-jenny-hill.jpg`), kostenlos kommerziell nutzbar unter der Unsplash License. Es ist ein illustratives Sportmotiv, keine Kundenempfehlung. Das Motiv wird lokal ausgeliefert. Quelle: https://unsplash.com/photos/man-running-on-road-near-grass-field-mQVWb7kUoOE. Lizenz: https://unsplash.com/license. Lizenznachweis und Abrufdatum sind in `assets/photo-license.txt` dokumentiert. Das frühere KI-Motiv wird nicht mehr verwendet. Die App-Ansicht darunter verwendet weiterhin ausschließlich die vorhandene, als Designstand gekennzeichnete Produktvisualisierung. Die Rhythm-Produktseite führt über eigenständige redaktionelle Abschnitte zu den bestehenden Unterseiten. Keine neuen App-Funktionen, Preise oder Wirkungsversprechen wurden hinzugefügt.
