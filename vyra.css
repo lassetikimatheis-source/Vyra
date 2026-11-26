@@ -31,10 +31,8 @@ h1, h2, h3, p { margin-top: 0; }
 h1, h2 { font-weight: 800; line-height: .95; letter-spacing: -.06em; }
 h1 { margin-bottom: clamp(1.75rem, 4vw, 3.5rem); font-size: clamp(3rem, 11vw, 10.5rem); }
 .hero h1 { font-size: clamp(3rem, 9vw, 9rem); }
-.hero-bottom { display: flex; gap: 1.6rem; flex-direction: column; align-items: center; }
 h2 { margin-bottom: 1.6rem; font-size: clamp(2.45rem, 6vw, 6rem); }
 .contact-band .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 1.5rem; }
-.hero-bottom p, .detail-copy { max-width: 44ch; margin: 0; color: var(--muted); font-size: clamp(1rem, 1.75vw, 1.35rem); line-height: 1.55; }
 .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1rem 1.25rem; border: 1px solid transparent; border-radius: 2rem; font: inherit; font-weight: 700; text-decoration: none; }
 .primary { color: white; background: var(--accent); }
 .primary:hover { background: #004da7; }
@@ -73,7 +71,6 @@ h2 { margin-bottom: 1.6rem; font-size: clamp(2.45rem, 6vw, 6rem); }
 @media (max-width: 760px) {
   .site-header { flex-wrap: wrap; }
   .site-header nav { order: 3; width: 100%; }
-  .wide { display: none; }
   .product-grid, .services { grid-template-columns: 1fr; }
   .product-art { min-height: 0; aspect-ratio: 16 / 9; }
   .site-footer { align-items: start; flex-wrap: wrap; }
@@ -94,22 +91,13 @@ h2 { margin-bottom: 1.6rem; font-size: clamp(2.45rem, 6vw, 6rem); }
   background: rgb(245 245 247 / 94%);
   backdrop-filter: blur(18px);
 }
-.hero-light {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(ellipse at 50% 55%, #fff 0%, transparent 68%);
-}
 @media (prefers-reduced-motion: no-preference) {
-  .hero > :not(.hero-light) { animation: settle-in .65s cubic-bezier(.2,.7,.2,1) both; }
-  .hero > h1 { animation-delay: .08s; }
-  .hero-bottom { animation-delay: .16s; }
+  .hero-content { animation: settle-in .65s cubic-bezier(.2,.7,.2,1) both; }
   .art-name, .arrow { transition: transform .3s cubic-bezier(.2,.7,.2,1); }
   .product:is(:hover, :focus-visible) .art-name { transform: scale(1.06); }
   .product:is(:hover, :focus-visible) .arrow { transform: translate(.18rem, -.18rem); }
   @supports (animation-timeline: view()) {
-    .product, .services > *, .customers ul {
+    .product, .services > * {
       animation: settle-in linear both;
       animation-timeline: view();
       animation-range: entry 0% cover 26%;
@@ -149,4 +137,152 @@ h2 { margin-bottom: 1.6rem; font-size: clamp(2.45rem, 6vw, 6rem); }
 }
 @media (max-width: 760px) {
   .skyline video { aspect-ratio: 4 / 3; }
+}
+
+/* Corporate homepage */
+.home { --paper: #f8f8f7; --ink: #101113; --muted: #55565b; --accent: #101113; }
+.home .wrap { width: min(100% - clamp(2rem, 9vw, 9rem), 80rem); }
+.home .site-header-wrap { background: #101113; color: white; }
+.home .site-header { min-height: 4.5rem; padding-block: .8rem; border: 0; }
+.home .site-header .brand span { color: #a9aab1; }
+.home .site-header nav { color: #e4e4e8; font-size: .92rem; }
+.home .header-contact { border-color: #777980; }
+.home .header-contact:hover { color: #101113; }
+.home .hero {
+  min-height: min(48rem, 82svh);
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  padding: clamp(4.5rem, 10vw, 9rem) 0;
+  background: #101113;
+  color: white;
+  text-align: left;
+}
+.hero-image, .home .skyline {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  margin: 0;
+  border-radius: 0;
+}
+.hero-image {
+  background: radial-gradient(ellipse at 80% 42%, #444952, transparent 68%), #101113;
+  background-image: url("/assets/frankfurt-skyline.webp"), radial-gradient(ellipse at 80% 42%, #444952, transparent 68%);
+  background-position: center;
+  background-size: cover;
+}
+.home .hero::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  background: linear-gradient(90deg, #090a0cee 0%, #090a0cab 43%, #090a0c13 100%), linear-gradient(0deg, #090a0c7f, transparent 35%);
+}
+.home .skyline video { height: 100%; aspect-ratio: auto; }
+.home .hero-content { position: relative; }
+.home .hero .eyebrow { margin-bottom: 1.5rem; color: #e2e2e8; }
+.home .hero .signal { background: #c9cbd1; }
+.home .hero h1 { font-size: clamp(3.1rem, 7.9vw, 8rem); line-height: .94; margin-bottom: 1.7rem; }
+.hero-description { max-width: 41ch; color: #ededf0; font-size: clamp(1rem, 1.6vw, 1.22rem); line-height: 1.55; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: .9rem 1.5rem; align-items: center; margin-top: 1.8rem; }
+.home .hero .primary { color: #111214; background: white; }
+.home .hero .primary:hover { background: #e0e0e5; }
+.hero-link { padding-block: .5rem; text-decoration: none; }
+.hero-link:hover { text-decoration: underline; text-underline-offset: .3em; }
+.hero-link span { margin-left: .35rem; }
+.home .skyline-toggle { z-index: 1; font-size: .8rem; }
+.customer-band {
+  border-block: 1px solid #e4e4e8;
+  background: #fff;
+  text-align: center;
+}
+.customer-band .wrap { padding-block: clamp(1.35rem, 3vw, 2.4rem); }
+.customer-band h2 { margin: 0 0 1rem; color: var(--muted); line-height: 1.3; letter-spacing: .13em; }
+.customer-band ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+.customer-band li {
+  display: grid;
+  place-items: center;
+  min-height: clamp(2.5rem, 5vw, 4rem);
+  padding-inline: clamp(.5rem, 2.5vw, 2rem);
+  color: #24252a;
+  font-size: clamp(.95rem, 2.5vw, 1.55rem);
+  font-weight: 650;
+  letter-spacing: -.025em;
+}
+.customer-band li + li { border-left: 1px solid #e4e4e8; }
+.home .products { background: #ededf0; color: var(--ink); }
+.home .products h2 { margin-bottom: clamp(1.5rem, 4vw, 3rem); }
+.home .product-grid { grid-template-columns: 1fr 1fr; }
+.home .product {
+  position: relative;
+  display: flex;
+  min-height: clamp(22rem, 34vw, 32rem);
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: #dedee4;
+  isolation: isolate;
+}
+.home .product-caption { align-items: center; padding: clamp(1.25rem, 3vw, 2.5rem); border: 0; }
+.home .product-caption p { margin-bottom: .6rem; color: #53545c; }
+.home .product-caption h3 { margin: 0; font-size: clamp(2.1rem, 4.5vw, 4.1rem); letter-spacing: -.07em; }
+.home .product-caption .arrow { width: .8em; height: .8em; }
+.home .product-bau { background: #25262b; color: white; }
+.home .product-bau .product-caption p, .home .product-rhythm .product-caption p { color: #e4e4e8; }
+.home .product-rhythm {
+  grid-column: 1 / -1;
+  min-height: clamp(16rem, 29vw, 25rem);
+  color: white;
+  background: #202126;
+}
+.product-rhythm::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  background: linear-gradient(90deg, #111215d9, #11121530), url("/assets/vyra-running-jenny-hill.jpg") center 53% / cover;
+  filter: grayscale(1);
+}
+.mockup {
+  width: 83%;
+  margin: auto auto -1rem;
+  padding: clamp(1rem, 2.75vw, 2rem);
+  border: 1px solid #fff9;
+  border-radius: 1.1rem 1.1rem 0 0;
+  background: #fcfcfd;
+  color: #202126;
+  box-shadow: 0 1rem 3rem #12121b2b;
+}
+.mockup-header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; padding-bottom: 1rem; border-bottom: 1px solid #dedee4; font-size: clamp(.8rem, 1.5vw, 1.1rem); }
+.mockup-header span { color: #55565e; font-size: .78em; }
+.mockup-row { display: flex; align-items: center; gap: .7rem; padding-block: 1rem; border-bottom: 1px solid #ededf0; }
+.mockup-row span { width: .7rem; height: .7rem; border-radius: 50%; background: #727681; }
+.mockup-row i { width: 44%; height: .45rem; border-radius: 1rem; background: #d6d7dd; }
+.mockup-row b { width: 18%; height: .75rem; margin-left: auto; border-radius: 1rem; background: #e2e3e8; }
+.mockup-chart { display: flex; align-items: end; justify-content: space-around; gap: .5rem; height: clamp(6rem, 12vw, 10rem); padding-top: 1rem; }
+.mockup-chart i { width: 10%; height: 40%; border-radius: .25rem .25rem 0 0; background: #6a6e79; }
+.mockup-chart i:nth-child(2n) { height: 56%; }
+.mockup-chart i:nth-child(3n) { height: 75%; }
+.mockup-chart i:last-child { height: 94%; background: #2b2d36; }
+.home .contact-band { color: white; background: #101113; }
+.home .contact-band .button { color: #101113; background: white; }
+.home .contact-band .button:hover { background: #e0e0e5; }
+@media (prefers-reduced-motion: no-preference) {
+  .mockup { transition: transform .45s cubic-bezier(.2,.7,.2,1); }
+  .product:is(:hover, :focus-visible) .mockup { transform: translateY(-.75rem); }
+}
+@media (max-width: 760px) {
+  .home .hero { min-height: 36rem; }
+  .home .hero::after { background: linear-gradient(90deg, #090a0cee, #090a0c76); }
+  .hero-image { background-position: 60% center; }
+  .home .product-grid { grid-template-columns: 1fr; }
+  .home .product { min-height: 19rem; }
+  .home .product-rhythm { min-height: 16rem; }
 }

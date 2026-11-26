@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#f5f5f7">
+  <meta name="theme-color" content="#101113">
   <meta name="description" content="VYRA berät Unternehmen und entwickelt individuelle Software. Entdecken Sie Vesta, BauKontur und VYRA Rhythm.">
   <title>VYRA — Softwareberatung &amp; individuelle Software</title>
   <link rel="stylesheet" href="/vyra.css">
   <script src="/skyline.js" defer></script>
 </head>
-<body>
+<body class="home">
   <a class="skip-link" href="#inhalt">Zum Inhalt</a>
   <header class="site-header-wrap">
   <div class="site-header wrap">
@@ -24,40 +24,59 @@
   </header>
 
   <main id="inhalt">
-    <section class="hero wrap" aria-labelledby="hero-title">
-      <div class="hero-light" aria-hidden="true"></div>
-      <p class="eyebrow"><span class="signal"></span> Softwareberatung &amp; Entwicklung</p>
-      <h1 id="hero-title">Software, die zu<br class="wide"> Ihnen passt.</h1>
-      <div class="hero-bottom">
-        <p>Wir beraten Unternehmen, entwickeln individuelle Anwendungen und bieten eigene Software für konkrete Aufgaben an.</p>
-        <a class="button primary" href="/kontakt">Projekt besprechen <span class="arrow" aria-hidden="true"></span></a>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-image" aria-hidden="true"></div>
+      <div class="skyline" hidden>
+        <video id="skyline-video" muted loop playsinline preload="none" aria-label="Drohnenflug über eine Skyline">
+          <source src="https://videos.pexels.com/video-files/12190286/12190286_1280_720_60fps.mp4" type="video/mp4">
+          <source src="https://videos.pexels.com/video-files/12190286/12190286_3840_2160_60fps.mp4" type="video/mp4">
+        </video>
       </div>
+      <div class="hero-content wrap">
+        <p class="eyebrow"><span class="signal"></span> Softwareberatung &amp; Entwicklung</p>
+        <h1 id="hero-title">Gute Software.<br>Passgenau gebaut.</h1>
+        <p class="hero-description">VYRA berät Unternehmen, entwickelt individuelle Anwendungen und bietet eigene Software für Schadensmanagement und Baukosten an.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="/kontakt">Projekt besprechen <span class="arrow" aria-hidden="true"></span></a>
+          <a class="hero-link" href="#produkte">Produkte entdecken <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <button class="skyline-toggle" type="button" aria-controls="skyline-video" hidden>Video abspielen</button>
     </section>
 
-    <div class="skyline wrap" hidden>
-      <video id="skyline-video" muted loop playsinline preload="none" aria-label="Drohnenflug über eine Skyline">
-        <source src="https://videos.pexels.com/video-files/12190286/12190286_1280_720_60fps.mp4" type="video/mp4">
-        <source src="https://videos.pexels.com/video-files/12190286/12190286_3840_2160_60fps.mp4" type="video/mp4">
-      </video>
-      <button class="skyline-toggle" type="button" aria-controls="skyline-video">Video abspielen</button>
-    </div>
+    <section id="kunden" class="customer-band" aria-labelledby="kunden-titel">
+      <div class="wrap">
+        <h2 id="kunden-titel" class="eyebrow">Ausgewählte Kunden</h2>
+        <ul>
+          <li>Hausverwaltung Menges</li>
+          <li>Paribus</li>
+        </ul>
+      </div>
+    </section>
 
     <section id="produkte" class="products">
       <div class="wrap">
         <p class="eyebrow">Unser Portfolio</p>
         <h2>Software im Einsatz.</h2>
         <div class="product-grid">
-          <a class="product" href="/vesta">
-            <div class="product-art vesta" aria-hidden="true"><span class="art-mark">V</span><span class="art-name">Vesta</span></div>
-            <div class="product-caption"><div><h3>Vesta</h3><p>Schadensmanagement</p></div><span class="arrow" aria-hidden="true"></span></div>
+          <a class="product product-vesta" href="/vesta">
+            <div class="product-caption"><div><p>Schadensmanagement</p><h3>Vesta</h3></div><span class="arrow" aria-hidden="true"></span></div>
+            <div class="mockup claims" aria-hidden="true">
+              <div class="mockup-header"><strong>Schadensfälle</strong><span>Übersicht</span></div>
+              <div class="mockup-row"><span></span><i></i><b></b></div>
+              <div class="mockup-row"><span></span><i></i><b></b></div>
+              <div class="mockup-row"><span></span><i></i><b></b></div>
+            </div>
           </a>
-          <a class="product" href="/baukontur">
-            <div class="product-art bau" aria-hidden="true"><div class="bau-grid"></div><span class="art-name">BauKontur</span></div>
-            <div class="product-caption"><div><h3>BauKontur</h3><p>Baukostenübersicht</p></div><span class="arrow" aria-hidden="true"></span></div>
+          <a class="product product-bau" href="/baukontur">
+            <div class="product-caption"><div><p>Baukostenübersicht</p><h3>BauKontur</h3></div><span class="arrow" aria-hidden="true"></span></div>
+            <div class="mockup costs" aria-hidden="true">
+              <div class="mockup-header"><strong>Projektkosten</strong><span>Übersicht</span></div>
+              <div class="mockup-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
           </a>
-          <a class="product" href="/rhythm">
-            <div class="product-art rhythm" aria-hidden="true"><span class="art-name">Rhythm</span></div>
-            <div class="product-caption"><div><h3>VYRA Rhythm</h3><p>App für Training, Ernährung und Erholung</p></div><span class="arrow" aria-hidden="true"></span></div>
+          <a class="product product-rhythm" href="/rhythm">
+            <div class="product-caption"><div><p>Training, Ernährung und Erholung</p><h3>VYRA Rhythm</h3></div><span class="arrow" aria-hidden="true"></span></div>
           </a>
         </div>
       </div>
@@ -70,12 +89,6 @@
         <div><dt>Individuelle Entwicklung</dt><dd>Wir entwickeln Anwendungen für Ihre internen Abläufe und die Anforderungen Ihres Teams.</dd></div>
         <div><dt>Eigene Softwareprodukte</dt><dd>Mit Vesta und BauKontur bieten wir Lösungen für Schadensmanagement und Baukostenübersicht an.</dd></div>
       </dl>
-    </section>
-
-    <section id="kunden" class="customers wrap">
-      <p class="eyebrow">Kunden</p>
-      <h2>Unternehmen, mit denen wir arbeiten.</h2>
-      <ul><li>Hausverwaltung Menges</li><li>Paribus</li></ul>
     </section>
 
     <section class="contact-band">
