@@ -69,3 +69,5 @@ Vesta, Bauklar und VYRA Rhythm stehen als Produktkarten auf der Startseite und u
 ### Eigenständiger interaktiver Prozess und Rhythm-Vorschau
 
 Die geschwungene Scrolllinie wurde auf Startseite und /prozess durch einen eigenen Prozess-Explorer ersetzt: vier auswählbare Phasen mit Arbeitsweise, konkreten Schritten und Ergebnis. Tastatursteuerung über Pfeiltasten, Home/End und Vor/Zurück; ohne JavaScript bleiben alle Inhalte sichtbar. Bei reduzierter Bewegung entfallen Übergänge. Das vom Betreiber gelieferte Rhythm-Bild steht als Designvorschau auf Produktkarten und App-Seite. Eine native Dialogansicht vergrößert es, schließt per Escape/Schließen und fällt ohne JavaScript auf den Bildlink zurück. Gezeigte Werte, Personen und Funktionen werden ausdrücklich nicht als aktuelle Produktnachweise behauptet.
+
+Als einzelnes Rhythm-Leitmotiv ist die zweite Smartphone-Ansicht „Dein Trainingsplan“ aus der gelieferten Collage ausgewählt. Der Bildausschnitt wird mit CSS pixelgetreu aus dem unveränderten Original gezeigt; keine KI-Neuerzeugung. In der vergrößerbaren Galerie bleibt die gesamte Designvorschau zugänglich.

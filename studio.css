@@ -1874,3 +1874,10 @@ body:has(.rhythm-preview-dialog[open]) {overflow:hidden;}
 @media(prefers-reduced-motion:reduce) {.process-tabs button {transition:none;}.is-enhanced .process-pane {animation:none;}}
 .process-section.shell {padding-top:45px;}
 .process-flow span {min-width:0;overflow-wrap:anywhere;hyphens:auto;}
+/* Selected original frame: the training-plan screen from the supplied collage. */
+.rhythm-selected-screen {position:relative;width:35%;aspect-ratio:287/508;overflow:hidden;border-radius:13% / 7%;box-shadow:0 20px 50px #0005;flex:none;}
+.rhythm-selected-screen img {position:absolute;inset:auto;left:-146.3415%;top:-.7874%;width:535.1916%;max-width:none;height:auto;object-fit:initial;display:block;}
+.rhythm-card-visual .rhythm-selected-screen {transform:translateY(-10px) rotate(-5deg);}
+.rhythm-selected-stage {display:flex;align-items:center;justify-content:center;padding:30px 0;background:radial-gradient(ellipse at 50% 50%,#6b425d,#181421 75%);}
+.rhythm-selected-stage .rhythm-selected-screen {width:47%;}
+.rhythm-reference .rhythm-selected-screen img {width:535.1916%;height:auto;max-width:none;}
