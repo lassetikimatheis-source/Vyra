@@ -75,3 +75,7 @@ Als einzelnes Rhythm-Leitmotiv ist die zweite Smartphone-Ansicht „Dein Trainin
 ### Scrollbasierte Projektspur
 
 Der Prozess verwendet wieder eine Linie, jetzt als eigenständige gerade Projektspur mit vier nacheinander erreichbaren Phasen. Die Linie folgt der Scrollposition; rechts bleibt eine Ergebnisanzeige sichtbar und wechselt passend zur erreichten Phase. Alle Inhalte stehen im natürlichen Seitenfluss, ohne Scroll-Sperre. Phasenlinks erlauben direktes Anspringen. Mobil bleibt die Linie mit den Ergebnissen in den Abschnitten erhalten; bei reduzierter Bewegung wird die Spur vollständig dargestellt und sanftes Scrollen deaktiviert.
+
+### Proportionen und Bildschärfe
+
+Das ausgewählte Rhythm-Gerät wird im schlankeren Verhältnis 9:19,5 gezeigt. Der vollständige Bildausschnitt bleibt dabei erhalten; die Darstellung wird auf das Geräteformat angepasst. Das Bauklar-Detailmotiv verwendet die ursprüngliche PNG-Datei, unbeschnitten und auf maximal 540 CSS-Pixel Breite begrenzt (1080 Pixel Originalbreite, passend für 2x-Darstellung). Ein Bildlink öffnet die Originalauflösung. Die natürliche Tiefenunschärfe und der Detailgrad der Vorlage werden dadurch nicht künstlich erweitert.

@@ -1922,3 +1922,13 @@ body:has(.rhythm-preview-dialog[open]) {overflow:hidden;}
 @media(max-width:760px) {.scroll-process-layout,.is-scroll-ready .scroll-process-layout {display:block;}.scroll-result-aside {display:none;}.scroll-phase {min-height:390px;padding:35px 0 55px 44px;}.scroll-node {top:44px;}.scroll-phase-title {font-size:2.5rem;}.scroll-phase-links {gap:8px;margin-bottom:25px;}.scroll-phase-links a {padding:10px 14px;font-size:.8rem;}.scroll-process {margin-top:30px;}}
 @media(prefers-reduced-motion:reduce) {.scroll-phase-title,.scroll-node,.scroll-phase-links a,.scroll-result-progress i {transition:none;}.scroll-track>i {transform:scaleY(1)!important;}}
 .scroll-process:not(.is-scroll-ready) .scroll-process-layout {grid-template-columns:1fr;}
+/* Slender phone proportions; map the same complete source frame into the device. */
+.rhythm-selected-screen {width:29%;aspect-ratio:9/19.5;border-radius:14% / 6.5%;}
+.rhythm-selected-screen img,.rhythm-reference .rhythm-selected-screen img {height:201.5748%;width:535.1916%;}
+.rhythm-selected-stage .rhythm-selected-screen {width:42%;max-width:220px;}
+/* Preserve the portrait photo's resolution rather than enlarging a wide crop. */
+.case-art.bauklar-art:has(.product-reference-photo) {aspect-ratio:auto;min-height:0;height:auto;padding:32px;background:#161c2a;gap:0;}
+.case-art.bauklar-art .case-source-open {display:block;width:min(100%,540px);border-radius:8px;overflow:hidden;}
+.case-art.bauklar-art .product-reference-photo {position:static;inset:auto;width:100%;height:auto;max-width:100%;object-fit:contain;object-position:center;}
+.case-art.bauklar-art .visual-note {position:static;max-width:100%;margin-top:20px;background:transparent;padding:0;color:#aeb5c8;}
+@media(max-width:760px) {.case-art.bauklar-art:has(.product-reference-photo) {padding:18px;}.rhythm-selected-stage .rhythm-selected-screen {width:43%;max-width:200px;}}
