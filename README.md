@@ -49,3 +49,7 @@ Korall, Mint und Blau ergänzen den dunklen Auftritt. Inhalte werden beim Scroll
 ### Skyline, Projektmotive und Prozesslinie
 
 Der frühere Überflug wurde durch eine Aufnahme der Skyline vom Main aus ersetzt. Das Layout ist näher an der Pencilrec-Referenz: dunkle Flächen, helle Typografie, große Bildflächen und limettengrüne Akzente. Die geschwungene vertikale Prozesslinie folgt dem Scrollfortschritt; vier Meilensteine werden beim Erreichen hervorgehoben. Bei reduzierter Bewegung wird die vollständige Linie ohne Animation angezeigt. Vesta und Bauklar verwenden lokal gespeicherte KI-generierte Bereichsmotive, ausdrücklich als solche gekennzeichnet; keine realen Kundenobjekte oder erfundenen Produktoberflächen. Original-Prompts und Speicherpfade stehen in assets/projects/generation-notes.txt.
+
+### Produkte und Seitentiefe
+
+VYRA Rhythm ist als eigenes VYRA-Produkt wieder integriert, getrennt von Kundenreferenzen. /produkte bietet den Einstieg; /rhythm führt zu /rhythm/balance, /rhythm/training und /rhythm/challenges. Die Hauptnavigation führt zu eigenständigen Leistungs-, Prozess-, Projekt- und Produktseiten. /prozess erklärt die Zusammenarbeit mit Scrolllinie; Projektseiten verlinken verwandte Projekte und Leistungen. Die App-Visualisierung ist eine ausdrücklich illustrative Funktionsübersicht ohne erfundene Gesundheitswerte. Der vom Betreiber bestätigte TestFlight-Link bleibt erhalten, ohne öffentliche App-Store-Verfügbarkeit zu behaupten. Keine Änderungen an Apple-Verifikation oder bestehenden unveröffentlichten App-Rechtstexten.

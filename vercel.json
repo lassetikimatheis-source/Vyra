@@ -62,11 +62,6 @@
       "source": "/baukontur",
       "destination": "/projekte/bauklar",
       "permanent": true
-    },
-    {
-      "source": "/rhythm",
-      "destination": "/leistungen",
-      "permanent": true
     }
   ]
 }
