@@ -72,54 +72,21 @@
     motion.addEventListener('change', drawJourney);
     drawJourney();
   }
-  const strip = document.querySelector("[data-client-strip]");
-  const toggle = document.querySelector(".ticker-toggle");
-  if (
-    strip &&
-    Array.isArray(window.VYRA_CLIENTS) &&
-    window.VYRA_CLIENTS.length
-  ) {
-    const track = document.createElement("div");
-    track.className = "logo-track";
-    for (let copy = 0; copy < 2; copy++) {
-      const group = document.createElement("div");
-      group.className = "logo-group";
-      if (copy) group.setAttribute("aria-hidden", "true");
-      window.VYRA_CLIENTS.forEach((client) => {
-        const destination = client.project || client.website;
-        const link = document.createElement(destination ? "a" : "span");
-        if (destination) link.href = destination;
-        link.className = "client-logo";
-        if (copy) link.tabIndex = -1;
-        const image = document.createElement("img");
-        image.src = client.logo;
-        image.alt = copy ? "" : client.name;
-        image.width = 260;
-        image.height = 90;
-        link.append(image);
-        group.append(link);
-      });
-      track.append(group);
-    }
-    strip.replaceChildren(track);
-    let paused = false;
-    const apply = () => {
-      strip.classList.toggle("is-moving", !motion.matches);
-      strip.classList.toggle("is-paused", paused);
-      if (toggle) {
-        toggle.hidden = motion.matches;
-        toggle.setAttribute("aria-pressed", String(paused));
-        toggle.textContent = paused
-          ? "Animation fortsetzen"
-          : "Animation pausieren";
-      }
-    };
-    toggle?.addEventListener("click", () => {
-      paused = !paused;
-      apply();
+  const strip = document.querySelector('[data-client-strip]');
+  if (strip && Array.isArray(window.VYRA_CLIENTS) && window.VYRA_CLIENTS.length) {
+    const group = document.createElement('div');
+    group.className = 'client-logos';
+    window.VYRA_CLIENTS.forEach(client => {
+      const destination = client.project || client.website;
+      const link = document.createElement(destination ? 'a' : 'span');
+      if (destination) link.href = destination;
+      link.className = 'client-logo';
+      const image = document.createElement('img');
+      image.src = client.logo; image.alt = client.name;
+      image.width = 260; image.height = 90;
+      link.append(image); group.append(link);
     });
-    motion.addEventListener("change", apply);
-    apply();
+    strip.replaceChildren(group);
   }
   // Reveal actual content progressively, without hiding above-the-fold text.
   const revealTargets = [...document.querySelectorAll('.section-lead, .service-grid article, .project-card, .process-grid article, .studio-statement, .faq-section, .studio-cta, .service-list article')];

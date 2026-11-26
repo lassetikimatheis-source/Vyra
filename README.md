@@ -34,7 +34,7 @@ Die öffentliche Marketingwebsite wurde auf individuelle Softwareentwicklung von
 
 1. Freigegebenes Original-Logo unter `assets/clients/` speichern.
 2. In `clients.js` einen Eintrag mit `name` und `logo` ergänzen; `project` (interne Projektseite) oder `website` (Kunden-Website) sind optional.
-3. Bauen und veröffentlichen. Beide Ticker-Gruppen werden automatisch erstellt. Die Bewegung läuft von links nach rechts, lässt sich pausieren und wird bei reduzierter Bewegung deaktiviert.
+3. Bauen und veröffentlichen. Die Logos erscheinen einmalig in einer statischen, auf kleinen Displays umbrechenden Reihe.
 
 Originalquellen: Menges https://www.cr-menges.de/wp-content/uploads/2026/05/cr-menges-immobilienmakler-giessen-2.webp ; Paribus SVG aus dem Header von https://www.paribus.de/ . Die Marken bleiben Eigentum der jeweiligen Rechteinhaber. Verwendung als Kundenreferenz entsprechend Betreiberauftrag.
 
@@ -61,3 +61,7 @@ Die aktuell sichtbaren Architektur- und Baustellenbilder wurden durch direkt in 
 ### Ruhigere Video-Schleife
 
 Die Startseite verwendet vyra-skyline-calm.mp4: halbe Bewegungsgeschwindigkeit, 30fps mit Bewegungsinterpolation und eine Vorwärts-/Rückwärts-Schleife von rund 41 Sekunden statt des zehnsekündigen Clips mit hartem Neustart. Die Auflösung von 1600x900 und ein Bitratenlimit von 1,6 Mbit/s reduzieren Übertragung und Dekodieraufwand. Die Langsamkeit ist in die Datei eingerechnet; keine ruckelnde JavaScript-Zeitsteuerung. Motion- und Datenspareinstellungen sowie die Pause-Funktion bleiben erhalten.
+
+### Produktliste und feste Referenzlogos
+
+Vesta, Bauklar und VYRA Rhythm stehen als Produktkarten auf der Startseite und unter /produkte. Die Kategorie „eigenes Projekt“ entfällt. Kundenlogos werden einmalig statisch aus clients.js erzeugt, ohne Animation oder doppelte Gruppen. „Deine Software.“ im Einstieg ist in VYRA-Korallpink gesetzt. Vom Betreiber ausdrücklich ausgewählte Pencilrec-Motive ersetzen die Bildschirm-Mockups als gekennzeichnete Symbolbilder; sie sind keine Originalaufnahmen der VYRA-Produkte. Quellen im Impressum und studio-sources.txt. Eine öffentliche Wiederverwendungslizenz wurde nicht gefunden oder behauptet.
