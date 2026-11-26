@@ -20,3 +20,5 @@ Current Vesta/Bauklar visuals: code-native HTML/CSS monitor mockups, no generate
 Calm hero derivative (vyra-skyline-calm.mp4): source 19236196 slowed to half speed, motion-interpolated at 30fps, 1600x900 H.264 High L4, forward/return loop around 41 seconds, muted, faststart, bitrate capped at 1.6 Mbps. This is an edited loop, not 41 seconds of distinct original footage.
 
 Current project photo sources, explicitly selected by website operator: https://www.pencilrec.de/case/case1.png and https://www.pencilrec.de/case/case-brand.png . Local JPEG derivatives: pencilrec-property-reference.jpg and pencilrec-analysis-reference.jpg. Displayed as symbol images, not screenshots of Vesta or Bauklar. Attribution in imprint. No public reuse licence identified; not described as free/licence-free.
+
+VYRA Rhythm design preview: operator-supplied file 841B3A3C-2BF1-4E72-9911-7AD08A468CD1.PNG, received 2026-11-26. Stored as locally optimised JPEG vyra-rhythm-design-preview.jpg. No content retouching. Marked as design preview with example data; gym occupancy, feeds, profiles and measurements in the image are not confirmed current product features or testimonials.

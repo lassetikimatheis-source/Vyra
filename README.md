@@ -65,3 +65,7 @@ Die Startseite verwendet vyra-skyline-calm.mp4: halbe Bewegungsgeschwindigkeit, 
 ### Produktliste und feste Referenzlogos
 
 Vesta, Bauklar und VYRA Rhythm stehen als Produktkarten auf der Startseite und unter /produkte. Die Kategorie „eigenes Projekt“ entfällt. Kundenlogos werden einmalig statisch aus clients.js erzeugt, ohne Animation oder doppelte Gruppen. „Deine Software.“ im Einstieg ist in VYRA-Korallpink gesetzt. Vom Betreiber ausdrücklich ausgewählte Pencilrec-Motive ersetzen die Bildschirm-Mockups als gekennzeichnete Symbolbilder; sie sind keine Originalaufnahmen der VYRA-Produkte. Quellen im Impressum und studio-sources.txt. Eine öffentliche Wiederverwendungslizenz wurde nicht gefunden oder behauptet.
+
+### Eigenständiger interaktiver Prozess und Rhythm-Vorschau
+
+Die geschwungene Scrolllinie wurde auf Startseite und /prozess durch einen eigenen Prozess-Explorer ersetzt: vier auswählbare Phasen mit Arbeitsweise, konkreten Schritten und Ergebnis. Tastatursteuerung über Pfeiltasten, Home/End und Vor/Zurück; ohne JavaScript bleiben alle Inhalte sichtbar. Bei reduzierter Bewegung entfallen Übergänge. Das vom Betreiber gelieferte Rhythm-Bild steht als Designvorschau auf Produktkarten und App-Seite. Eine native Dialogansicht vergrößert es, schließt per Escape/Schließen und fällt ohne JavaScript auf den Bildlink zurück. Gezeigte Werte, Personen und Funktionen werden ausdrücklich nicht als aktuelle Produktnachweise behauptet.

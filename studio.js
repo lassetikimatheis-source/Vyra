@@ -46,31 +46,50 @@
     { passive: true },
   );
   paint();
-  // The line follows scroll position; each milestone lights as it is reached.
-  const journey = document.querySelector('[data-journey]');
-  if (journey) {
-    const progress = journey.querySelector('.journey-progress');
-    const steps = [...journey.querySelectorAll('.journey-step')];
-    const dots = [...journey.querySelectorAll('.journey-dot')];
-    const halos = [...journey.querySelectorAll('.journey-halo')];
-    let pending = false;
-    const drawJourney = () => {
-      const box = journey.getBoundingClientRect();
-      const ratio = motion.matches ? 1 : Math.max(0, Math.min(1, (innerHeight * .57 - box.top) / box.height));
-      progress.style.strokeDashoffset = String(1 - ratio);
-      steps.forEach((step, index) => {
-        const reached = ratio >= (index + .5) / steps.length;
-        step.classList.toggle('is-reached', reached);
-        dots[index]?.classList.toggle('is-reached', reached);
-        halos[index]?.classList.toggle('is-reached', reached);
+  document.querySelectorAll('[data-process-explorer]').forEach(explorer => {
+    const tabList = explorer.querySelector('[role="tablist"]');
+    const tabs = [...tabList.querySelectorAll('[role="tab"]')];
+    const panels = [...explorer.querySelectorAll('[role="tabpanel"]')];
+    const controls = explorer.querySelector('.process-controls');
+    const previous = controls.querySelector('[data-process-prev]');
+    const next = controls.querySelector('[data-process-next]');
+    const position = controls.querySelector('[data-process-position]');
+    let current = 0;
+    const select = (index, focus = false) => {
+      current = Math.max(0, Math.min(tabs.length - 1, index));
+      tabs.forEach((tab, i) => {
+        tab.setAttribute('aria-selected', String(i === current));
+        tab.tabIndex = i === current ? 0 : -1;
+        panels[i].hidden = i !== current;
       });
-      pending = false;
+      previous.disabled = current === 0;
+      next.disabled = current === tabs.length - 1;
+      position.textContent = `${current + 1} von ${tabs.length}`;
+      if (focus) tabs[current].focus();
     };
-    const scheduleJourney = () => { if (!pending) { pending = true; requestAnimationFrame(drawJourney); } };
-    addEventListener('scroll', scheduleJourney, {passive:true});
-    addEventListener('resize', scheduleJourney);
-    motion.addEventListener('change', drawJourney);
-    drawJourney();
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => select(index));
+      tab.addEventListener('keydown', event => {
+        let target;
+        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') target = (current + 1) % tabs.length;
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') target = (current - 1 + tabs.length) % tabs.length;
+        if (event.key === 'Home') target = 0;
+        if (event.key === 'End') target = tabs.length - 1;
+        if (target !== undefined) { event.preventDefault(); select(target, true); }
+      });
+    });
+    previous.addEventListener('click', () => select(current - 1));
+    next.addEventListener('click', () => select(current + 1));
+    select(0); tabList.hidden = false; controls.hidden = false;
+    explorer.classList.add('is-enhanced');
+  });
+  const previewDialog = document.querySelector('.rhythm-preview-dialog');
+  if (previewDialog && typeof previewDialog.showModal === 'function') {
+    document.querySelector('[data-open-rhythm-preview]')?.addEventListener('click', event => {
+      event.preventDefault(); previewDialog.showModal();
+    });
+    previewDialog.querySelector('[data-close-rhythm-preview]').addEventListener('click', () => previewDialog.close());
+    previewDialog.addEventListener('click', event => { if (event.target === previewDialog) previewDialog.close(); });
   }
   const strip = document.querySelector('[data-client-strip]');
   if (strip && Array.isArray(window.VYRA_CLIENTS) && window.VYRA_CLIENTS.length) {
