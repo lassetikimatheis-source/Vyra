@@ -79,3 +79,7 @@ Der Prozess verwendet wieder eine Linie, jetzt als eigenständige gerade Projekt
 ### Proportionen und Bildschärfe
 
 Das ausgewählte Rhythm-Gerät wird im schlankeren Verhältnis 9:19,5 gezeigt. Der vollständige Bildausschnitt bleibt dabei erhalten; die Darstellung wird auf das Geräteformat angepasst. Das Bauklar-Detailmotiv verwendet die ursprüngliche PNG-Datei, unbeschnitten und auf maximal 540 CSS-Pixel Breite begrenzt (1080 Pixel Originalbreite, passend für 2x-Darstellung). Ein Bildlink öffnet die Originalauflösung. Die natürliche Tiefenunschärfe und der Detailgrad der Vorlage werden dadurch nicht künstlich erweitert.
+
+### Outlook-Terminbuchung
+
+/termin verlinkt den vom Betreiber autorisierten Microsoft-Personal-Bookings-Typ „VYRA · Erstgespräch“ (30 Minuten, Teams). Kalender: Lasse Tiki Matheis – Claus R. Menges GmbH; der Betreiber hat die Verwendung ausdrücklich bestätigt. Der Buchungstyp nutzt bestehende reguläre Besprechungszeiten und den Outlook-Verfügbarkeitsabgleich. Microsoft-Voreinstellungen: mindestens eine Stunde Vorlauf, maximal 90 Tage, 30-Minuten-Raster, kein zusätzlicher Puffer. Die Signatur-Option wurde ausgeschaltet; vorhandene andere Besprechungstypen blieben unverändert. Kein Kalender-Token oder Kennwort liegt im Website-Code. Die Website lädt Bookings erst über einen bewussten externen Link; kein Iframe. Der Buchungslink ist ein öffentlicher, nicht geheimer Besprechungslink. Hauptnavigation, Startseiten-CTA und Kontaktseite führen zur Terminseite. Datenschutzinformationen nennen die tatsächliche Kalenderorganisation.
