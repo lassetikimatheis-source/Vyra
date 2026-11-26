@@ -209,14 +209,18 @@ h2 { margin-bottom: 1.6rem; font-size: clamp(2.45rem, 6vw, 6rem); }
 .customer-band li {
   display: grid;
   place-items: center;
-  min-height: clamp(2.5rem, 5vw, 4rem);
+  min-height: 5.25rem;
   padding-inline: clamp(.5rem, 2.5vw, 2rem);
-  color: #24252a;
-  font-size: clamp(.95rem, 2.5vw, 1.55rem);
-  font-weight: 650;
-  letter-spacing: -.025em;
 }
 .customer-band li + li { border-left: 1px solid #e4e4e8; }
+.customer-logo { display: block; max-width: 100%; height: auto; }
+.menges-logo { width: 4.6rem; }
+.paribus-logo {
+  width: 10rem;
+  padding: .65rem .85rem;
+  border-radius: .35rem;
+  background: #20252a;
+}
 .home .products { background: #ededf0; color: var(--ink); }
 .home .products h2 { margin-bottom: clamp(1.5rem, 4vw, 3rem); }
 .home .product-grid { grid-template-columns: 1fr 1fr; }

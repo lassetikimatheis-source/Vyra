@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 154 177">
+  <path fill="#ff492f" d="M17 5h39L39 123H4z"/>
+  <path fill="#8c2620" d="M17 5h39l-7 49z"/>
+  <path fill="#70969b" d="m56 5 37 118H57L43 79z"/>
+  <path fill="#c99426" d="M92 5h37L92 123H57z"/>
+  <path fill="#545736" d="m75 97 17 26H57l10-34z"/>
+  <path fill="#a47d28" d="M92 5h37l-24 72z"/>
+  <path fill="#cdcdc1" d="m129 5 12 118h-37l-5-30z"/>
+  <text x="4" y="154" fill="#e54536" font-family="Arial,sans-serif" font-weight="300" font-size="32" textLength="140" lengthAdjust="spacingAndGlyphs">MENGES</text>
+  <text x="4" y="167" fill="#323333" font-family="Arial,sans-serif" font-size="10" textLength="140" lengthAdjust="spacingAndGlyphs">IMMOBILIENLEIDENSCHAFT</text>
+</svg>
