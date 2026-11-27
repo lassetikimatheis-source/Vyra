@@ -2015,3 +2015,40 @@ body:has(.rhythm-preview-dialog[open]) {overflow:hidden;}
 .project-caption h3 {color:var(--coral);text-align:left;}
 .project-caption p {text-align:left;}
 .project-caption>span,.product-list-grid .project-caption>span {display:block;text-align:left;max-width:none;margin-top:14px;}
+/* A winding project path, with phases alternating across its two sides. */
+.scroll-process-layout,.is-scroll-ready .scroll-process-layout {display:block;}
+.scroll-steps {--process-gap:clamp(110px,14vw,190px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:var(--process-gap);row-gap:22px;position:relative;isolation:isolate;}
+.scroll-wave {position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:-1;}
+.scroll-wave-base,.scroll-wave-fill {fill:none;stroke-width:2;stroke-linecap:round;vector-effect:non-scaling-stroke;}
+.scroll-wave-base {stroke:#3c455a;}
+.scroll-wave-fill {stroke:var(--coral);stroke-dasharray:1;stroke-dashoffset:1;}
+.scroll-phase {padding:30px;min-height:0;border:1px solid #ffffff20;border-radius:16px;background:#171c2a;scroll-margin-top:135px;transition:border-color .35s,background .35s;}
+.scroll-phase:nth-of-type(odd) {grid-column:2;}
+.scroll-phase:nth-of-type(even) {grid-column:1;}
+.scroll-phase:nth-of-type(1) {grid-row:1;}
+.scroll-phase:nth-of-type(2) {grid-row:2;}
+.scroll-phase:nth-of-type(3) {grid-row:3;}
+.scroll-phase:nth-of-type(4) {grid-row:4;}
+.scroll-phase:not(:first-of-type) {margin-top:-150px;}
+.scroll-phase.is-active {border-color:#f28ea975;background:#201e2e;}
+.scroll-phase-title {font-size:clamp(2rem,3.1vw,3.1rem);margin-bottom:20px;}
+.scroll-phase h3 {font-size:1.15rem;line-height:1.45;}
+.scroll-phase-copy {font-size:1rem;}
+.scroll-phase ul {font-size:.9rem;margin-block:20px;}
+.scroll-node {top:46px;transform:translateY(0);}
+.scroll-phase:nth-of-type(odd) .scroll-node {left:calc(var(--process-gap) * -.28 - 8px);right:auto;}
+.scroll-phase:nth-of-type(even) .scroll-node {right:calc(var(--process-gap) * -.28 - 8px);left:auto;}
+.scroll-phase:before {content:"";position:absolute;top:54px;width:calc(var(--process-gap) * .28);height:1px;background:#71798a66;}
+.scroll-phase:nth-of-type(odd):before {left:calc(var(--process-gap) * -.28);}
+.scroll-phase:nth-of-type(even):before {right:calc(var(--process-gap) * -.28);}
+@media(max-width:760px) {
+ .scroll-steps {display:grid;grid-template-columns:minmax(0,1fr);gap:28px;padding-left:34px;}
+ .scroll-phase:nth-of-type(n) {grid-column:1;grid-row:auto;margin-top:0;padding:24px 20px;}
+ .scroll-phase:nth-of-type(odd) .scroll-node {left:-27px;right:auto;}
+ .scroll-phase:nth-of-type(even) .scroll-node {left:-35px;right:auto;}
+ .scroll-phase:nth-of-type(n):before {right:auto;left:-20px;width:20px;}
+ .scroll-phase:nth-of-type(even):before {left:-28px;width:28px;}
+ .scroll-phase-title {font-size:2rem;}
+ .scroll-phase-copy {font-size:.95rem;}
+}
+@media(prefers-reduced-motion:reduce) {.scroll-phase {transition:none;}.scroll-wave-fill {stroke-dashoffset:0!important;}}

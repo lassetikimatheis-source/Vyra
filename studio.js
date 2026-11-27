@@ -49,50 +49,67 @@
   document.querySelectorAll('[data-scroll-process]').forEach(process => {
     const steps = [...process.querySelectorAll('.scroll-phase')];
     const nodes = steps.map(step => step.querySelector('.scroll-node'));
-    const track = process.querySelector('.scroll-track');
-    const fill = track.querySelector('i');
-    const aside = process.querySelector('.scroll-result-aside');
-    const card = aside.querySelector('.scroll-result-card');
+    const container = process.querySelector('.scroll-steps');
+    const svg = process.querySelector('.scroll-wave');
+    const basePath = svg.querySelector('.scroll-wave-base');
+    const fillPath = svg.querySelector('.scroll-wave-fill');
     const links = [...process.querySelectorAll('.scroll-phase-links a')];
-    const flow = [...aside.querySelectorAll('.scroll-result-flow span')];
-    const segments = [...aside.querySelectorAll('.scroll-result-progress i')];
+    let points = [];
+    let pathLength = 0;
     let pending = false;
+    let needsMeasure = true;
     let active = -1;
-    const render = () => {
-      const bounds = nodes.map(node => node.getBoundingClientRect());
-      const base = process.querySelector('.scroll-steps').getBoundingClientRect();
-      const first = bounds[0].top + bounds[0].height / 2;
-      const last = bounds.at(-1).top + bounds.at(-1).height / 2;
-      const cursor = innerHeight * .52;
-      track.style.top = `${first - base.top}px`;
-      track.style.height = `${last - first}px`;
-      fill.style.transform = `scaleY(${motion.matches ? 1 : Math.max(0, Math.min(1, (cursor - first) / Math.max(1, last - first)))})`;
-      let current = 0;
-      bounds.forEach((box, index) => {
-        const reached = box.top + box.height / 2 <= cursor;
-        if (reached) current = index;
-        steps[index].classList.toggle('is-reached', reached || motion.matches);
+    const measure = () => {
+      const box = container.getBoundingClientRect();
+      points = nodes.map(node => {
+        const r = node.getBoundingClientRect();
+        return {x:r.left+r.width/2-box.left,y:r.top+r.height/2-box.top};
       });
-      if (current !== active) {
-        active = current;
-        steps.forEach((step, index) => step.classList.toggle('is-active', index === active));
-        links.forEach((link, index) => { if (index === active) link.setAttribute('aria-current', 'step'); else link.removeAttribute('aria-current'); });
-        card.dataset.phase = String(active);
-        aside.querySelector('[data-scroll-label]').textContent = steps[active].dataset.phaseName;
-        aside.querySelector('[data-scroll-result]').textContent = steps[active].querySelector('.scroll-inline-result p').textContent;
-        const source = steps[active].querySelectorAll('.scroll-flow-source span');
-        flow.forEach((item, index) => item.textContent = source[index].textContent);
-        segments.forEach((segment, index) => segment.classList.toggle('is-done', index <= active));
+      svg.setAttribute('viewBox', `0 0 ${box.width} ${box.height}`);
+      const first = points[0];
+      let d = `M ${first.x} 0 L ${first.x} ${first.y}`;
+      for (let i=1;i<points.length;i++) {
+        const p=points[i-1], q=points[i], bend=(q.y-p.y)*.52;
+        d += ` C ${p.x} ${p.y+bend}, ${q.x} ${q.y-bend}, ${q.x} ${q.y}`;
       }
-      pending = false;
+      const last=points.at(-1);
+      d += ` C ${last.x} ${last.y+45}, ${box.width/2} ${last.y+75}, ${box.width/2} ${Math.min(box.height,last.y+120)}`;
+      basePath.setAttribute('d',d); fillPath.setAttribute('d',d);
+      pathLength=fillPath.getTotalLength();
+      needsMeasure=false;
     };
-    const schedule = () => { if (!pending) { pending = true; requestAnimationFrame(render); } };
-    addEventListener('scroll', schedule, {passive:true});
-    addEventListener('resize', schedule);
-    motion.addEventListener('change', schedule);
-    aside.hidden = false; process.classList.add('is-scroll-ready');
+    const render = () => {
+      if (needsMeasure) measure();
+      const cursor=innerHeight*.52-container.getBoundingClientRect().top;
+      let low=0, high=pathLength;
+      for (let n=0;n<12;n++) {
+        const middle=(low+high)/2;
+        if (fillPath.getPointAtLength(middle).y < cursor) low=middle;
+        else high=middle;
+      }
+      const ratio=Math.max(0,Math.min(1,(low+high)/2/Math.max(1,pathLength)));
+      fillPath.style.strokeDashoffset=String(motion.matches ? 0 : 1-ratio);
+      let current=0;
+      points.forEach((point,index) => {
+        const reached=point.y<=cursor;
+        if(reached) current=index;
+        steps[index].classList.toggle('is-reached',reached||motion.matches);
+      });
+      if(current!==active) {
+        active=current;
+        steps.forEach((step,index)=>step.classList.toggle('is-active',index===active));
+        links.forEach((link,index)=>{if(index===active)link.setAttribute('aria-current','step');else link.removeAttribute('aria-current');});
+      }
+      pending=false;
+    };
+    const schedule=()=>{if(!pending){pending=true;requestAnimationFrame(render);}};
+    const resize=()=>{needsMeasure=true;schedule();};
+    addEventListener('scroll',schedule,{passive:true});
+    addEventListener('resize',resize);
+    motion.addEventListener('change',schedule);
+    process.classList.add('is-scroll-ready');
     render();
-    document.fonts?.ready.then(schedule);
+    document.fonts?.ready.then(resize);
   });
   const previewDialog = document.querySelector('.rhythm-preview-dialog');
   if (previewDialog && typeof previewDialog.showModal === 'function') {

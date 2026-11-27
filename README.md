@@ -87,3 +87,7 @@ Das ausgewählte Rhythm-Gerät wird im schlankeren Verhältnis 9:19,5 gezeigt. D
 ### Einheitliche Produktdetails und expandierende Startseiten-Kacheln
 
 Vesta und Bauklar nutzen das gemeinsame Layout product-detail-layout mit Bild links und Projektbeschreibung rechts. Rhythm zeigt im Desktop-Einstieg ebenfalls das App-Motiv links; auf mobilen Geräten bleibt die logische Text-/Bildreihenfolge erhalten. Die drei Startseiten-Produktkarten teilen eine animierte Grid-Spur: Hover oder Tastaturfokus erweitert die aktive Karte und verschiebt die Nachbarn. Feste Bildhöhen vermeiden vertikales Springen. Unterhalb von 1060px bleiben die Karten im normalen Raster; bei reduzierter Bewegung entfällt die Expansion. Die Produktübersicht unter /produkte behält ihr ruhiges Raster.
+
+### Geschwungene, wechselnde Prozesslinie
+
+Die vier Phasen stehen auf dem Desktop versetzt abwechselnd rechts und links. Eine aus den tatsächlichen Markerpositionen berechnete SVG-Kurve verbindet sie; ihr sichtbarer Fortschritt folgt exakt der vertikalen Scrollposition entlang der Kurve. Ergebnisse bleiben direkt im jeweiligen Block. Die zusätzliche feste Ergebnisanzeige entfällt. Mobil verläuft die sanft geschwungene Linie am linken Rand, damit die Textblöcke ihre volle Lesebreite behalten. Bei reduzierter Bewegung ist die Linie vollständig sichtbar.
