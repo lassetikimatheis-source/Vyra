@@ -2010,3 +2010,8 @@ body:has(.rhythm-preview-dialog[open]) {overflow:hidden;}
  .studio-home .product-list-grid {transition:none;grid-template-columns:1fr 1fr 1fr!important;}
 }
 @media(min-width:1060px) {.studio-home .product-list-grid .project-caption {min-height:150px;}}
+/* Product names use VYRA pink; all card copy shares the same left edge. */
+.project-caption,.product-list-grid .project-caption {display:block;text-align:left;}
+.project-caption h3 {color:var(--coral);text-align:left;}
+.project-caption p {text-align:left;}
+.project-caption>span,.product-list-grid .project-caption>span {display:block;text-align:left;max-width:none;margin-top:14px;}
